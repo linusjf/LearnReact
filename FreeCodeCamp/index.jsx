@@ -10,6 +10,10 @@ class Examples extends React.Component {
         {
           name: "Array Filter",
           address: "/arrayfilter.html",
+        },
+        {
+          name: "Use Array Map",
+          address: "/usearraymap.html",
         }
       ]
     };
