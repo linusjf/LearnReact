@@ -1,0 +1,126 @@
+#!/usr/bin/env -S bash
+#shellcheck disable=SC1091
+source ./require.sh
+source ./errorhandlers.sh
+source ./colors.sh
+require date htmlhint sed stylelint prettier tidy find parallel colorguard html-validate js-beautify nproc
+start=$(date +%s)
+echo -e "${GREEN}Starting...${ENDCOLOR}"
+declare -i SUCCESS=0
+declare -i STYLE_SUCCESS=0
+declare -r configFileName="tidy.config"
+declare -i PROCS=$(($(nproc) - 1))
+files=$(find . -type f -name "*.css" ! -name "*.scss.css" ! -name "*.sass.css" \
+  ! -path "**/.git/**" ! -path "**/node_modules/**")
+if ! test -z "$files"; then
+  echo -e "${GREEN}Executing colorguard...${ENDCOLOR}"
+  echo "$files" |
+    parallel -X --bar -j "$PROCS" -I% \
+      colorguard --file % --allow-equivalent-notation
+  STYLE_SUCCESS=$((STYLE_SUCCESS + $?))
+  echo -e "${GREEN}Executing prettier for css...${ENDCOLOR}"
+  echo "$files" |
+    parallel -X --bar -j "$PROCS" -I% \
+      prettier --log-level silent --cache --parser css --write %
+  STYLE_SUCCESS=$((STYLE_SUCCESS + $?))
+fi
+files=$(find . -type f -name "*.css" ! -name "*.scss.css" ! -name "*.sass.css" ! -name "tw-*.css" \
+  ! -path "**/.git/**" ! -path "**/node_modules/**")
+if ! test -z "$files"; then
+  echo -e "${GREEN}Executing stylelint for css...${ENDCOLOR}"
+  echo "$files" |
+    parallel -X --bar -j "$PROCS" -I% \
+      stylelint % --color --fix --quiet-deprecation-warnings
+  STYLE_SUCCESS=$((STYLE_SUCCESS + $?))
+fi
+files=$(find . -type f -name "*.scss" \
+  ! -path "**/.git/**" ! -path "**/node_modules/**" ! -path "**/*tailwind.css")
+if ! test -z "$files"; then
+  echo -e "${GREEN}Executing prettier for scss...${ENDCOLOR}"
+  echo "$files" |
+    parallel -X --bar -j "$PROCS" -I% \
+      prettier --log-level silent --cache --parser scss --write %
+  STYLE_SUCCESS=$((STYLE_SUCCESS + $?))
+  echo -e "${GREEN}Executing stylelint for scss...${ENDCOLOR}"
+  echo "$files" |
+    parallel -X --bar -j "$PROCS" -I% \
+      stylelint % --color --fix --quiet-deprecation-warnings
+  STYLE_SUCCESS=$((STYLE_SUCCESS + $?))
+fi
+files=$(find . -maxdepth 2 -type f -name "*.html" \
+  ! -path "**/.git/**")
+if ! test -z "$files"; then
+  echo -e "${GREEN}Executing tidy...${ENDCOLOR}"
+  echo "Warnings and errors written to tidy.out."
+  ./wraptidy -config "$configFileName" -quiet -modify -- **/*.html
+  SUCCESS=$((SUCCESS + $?))
+  sed -i "/^Tidy.*$/d" tidy.out
+  echo -e "${GREEN}Executing prettier for html...${ENDCOLOR}"
+  echo "$files" |
+    parallel -X --bar -j "$PROCS" -I% \
+      prettier --log-level silent --cache --parser html --write %
+  SUCCESS=$((SUCCESS + $?))
+  echo -e "${GREEN}Executing htmlhint...${ENDCOLOR}"
+  echo "$files" |
+    parallel -X --bar -j "$PROCS" -I% \
+      htmlhint --config .htmlhintrc -f compact % 2>/dev/null
+  SUCCESS=$?
+  echo -e "${GREEN}Executing html-validate...${ENDCOLOR}"
+  echo "$files" |
+    parallel -X --bar -j "$PROCS" -I% \
+      html-validate --formatter stylish %
+  SUCCESS=$((SUCCESS + $?))
+fi
+files=$(find . -type f -name "*.js" \
+  ! -path "**/.git/**" ! -path "**/node_modules/**" ! -path "**/*tailwind.css")
+if ! test -z "$files"; then
+  echo -e "${GREEN}Executing js-beautify for js...${ENDCOLOR}"
+  echo "$files" |
+    parallel -X --bar -j "$PROCS" -I% \
+      js-beautify --type js --quiet -r %
+  SUCCESS=$((SUCCESS + $?))
+fi
+files=$(find . -type f -name "*.scss" ! -name "_*.scss" \
+  ! -path "**/.git/**" ! -path "**/node_modules/**" ! -path "**/*tailwind.css")
+if ! test -z "$files"; then
+  echo -e "${GREEN}Executing sass for scss...${ENDCOLOR}"
+  echo "$files" |
+    parallel -X --bar -j "$PROCS" -I@ \
+      ./runsass @
+  SUCCESS=$((SUCCESS + $?))
+fi
+files=$(find . -type f -name "*.sass" \
+  ! -path "**/.git/**" ! -path "**/node_modules/**" ! -path "**/*tailwind.css")
+if ! test -z "$files"; then
+  echo -e "${GREEN}Executing sass for sass...${ENDCOLOR}"
+  echo "$files" |
+    parallel -X --bar -j "$PROCS" -I% \
+      ./runsass %
+  SUCCESS=$((SUCCESS + $?))
+fi
+files=$(find . -type f -name "*.svg" \
+  ! -path "**/.git/**" ! -path "**/node_modules/**" ! -path "**/*tailwind.css")
+if ! test -z "$files"; then
+  echo -e "${GREEN}Executing prettier for svg...${ENDCOLOR}"
+  echo "$files" |
+    parallel -X --bar -j "$PROCS" -I% \
+      prettier --log-level silent --cache --parser html --write %
+  SUCCESS=$((SUCCESS + $?))
+fi
+files=$(find . -type f -name "*.jsx" \
+  ! -path "**/.git/**" ! -path "**/node_modules/**" ! -path "**/*tailwind.css")
+if ! test -z "$files"; then
+  echo -e "${GREEN}Executing prettier for jsx...${ENDCOLOR}"
+  echo "$files" |
+    parallel -X --bar -j "$PROCS" -I% \
+      prettier --log-level silent --cache --parser babel --write %
+  SUCCESS=$((SUCCESS + $?))
+  echo -e "${GREEN}Executing eslint for jsx...${ENDCOLOR}"
+  echo "$files" |
+    parallel -X --bar -j "$PROCS" -I% \
+      eslint --fix %
+  SUCCESS=$((SUCCESS + $?))
+fi
+end=$(date +%s)
+echo -e "${GREEN}Execution time: $((end - start)) seconds.${ENDCOLOR}"
+exit $((SUCCESS + STYLE_SUCCESS))

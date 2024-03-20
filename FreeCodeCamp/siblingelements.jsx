@@ -4,21 +4,20 @@ const frontEndFrameworks = [
   'Ember',
   'Knockout',
   'Backbone',
-  'Vue'
+  'Vue',
 ];
 
 function Frameworks() {
   const frameworks = (fm) => {
-    return <li key={fm}>{fm}</li>;
-  }
-  const renderFrameworks = frontEndFrameworks.map(frameworks); 
-  // Change this line
+    return;
+    <li key={fm}>{fm}</li>;
+  };
+
+  const renderFrameworks = frontEndFrameworks.map(frameworks);
   return (
     <div>
       <h1>Popular Front End JavaScript Frameworks</h1>
-      <ul>
-        {renderFrameworks}
-      </ul>
+      <ul>{renderFrameworks}</ul>
     </div>
   );
-};
+}

@@ -4,27 +4,27 @@ class MyComponent extends React.Component {
     this.state = {
       users: [
         {
-          username: "Jeff",
+          username: 'Jeff',
           online: true,
         },
         {
-          username: "Alan",
+          username: 'Alan',
           online: false,
         },
         {
-          username: "Mary",
+          username: 'Mary',
           online: true,
         },
         {
-          username: "Jim",
+          username: 'Jim',
           online: false,
         },
         {
-          username: "Sara",
+          username: 'Sara',
           online: true,
         },
         {
-          username: "Laura",
+          username: 'Laura',
           online: true,
         },
       ],
@@ -47,6 +47,6 @@ class MyComponent extends React.Component {
   }
 }
 
-const container = document.getElementById("root");
+const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
 root.render(<MyComponent />);
