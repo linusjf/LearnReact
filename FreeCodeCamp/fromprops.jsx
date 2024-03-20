@@ -9,7 +9,7 @@ class Results extends React.Component {
 }
 
 Results.propTypes = {
-  fiftyFifty: PropTypes.bool,
+  fiftyFifty: PropTypes.bool
 };
 
 class GameOfChance extends React.Component {

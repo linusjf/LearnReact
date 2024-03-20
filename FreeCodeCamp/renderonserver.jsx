@@ -3,9 +3,12 @@ class App extends React.Component {
     super(props);
   }
   render() {
-    return <div />;
+    return (
+      <div>
+        <p>Rendered to string</p>
+      </div>
+    );
   }
 }
 
-// Change code below this line
 ReactDOMServer.renderToString(<App />);

@@ -26,6 +26,10 @@
     "react"
   ],
   "rules": {
+    "comma-dangle": [
+      "warn",
+      "never"
+    ],
     "require-jsdoc": "off"
   },
   "settings": {

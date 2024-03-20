@@ -1,6 +1,6 @@
 const textAreaStyles = {
   width: 235,
-  margin: 5,
+  margin: 5
 };
 
 class MyToDoList extends React.Component {
@@ -9,7 +9,7 @@ class MyToDoList extends React.Component {
     // Change code below this line
     this.state = {
       userInput: '',
-      toDoList: [],
+      toDoList: []
     };
     // Change code above this line
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -18,12 +18,12 @@ class MyToDoList extends React.Component {
   handleSubmit() {
     const itemsArray = this.state.userInput.split(',');
     this.setState({
-      toDoList: itemsArray,
+      toDoList: itemsArray
     });
   }
   handleChange(e) {
     this.setState({
-      userInput: e.target.value,
+      userInput: e.target.value
     });
   }
   render() {

@@ -5,29 +5,29 @@ class MyComponent extends React.Component {
       users: [
         {
           username: 'Jeff',
-          online: true,
+          online: true
         },
         {
           username: 'Alan',
-          online: false,
+          online: false
         },
         {
           username: 'Mary',
-          online: true,
+          online: true
         },
         {
           username: 'Jim',
-          online: false,
+          online: false
         },
         {
           username: 'Sara',
-          online: true,
+          online: true
         },
         {
           username: 'Laura',
-          online: true,
-        },
-      ],
+          online: true
+        }
+      ]
     };
   }
   render() {

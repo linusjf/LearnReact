@@ -5,25 +5,29 @@ class Examples extends React.Component {
       examples: [
         {
           name: 'From Props',
-          address: '/fromprops.html',
+          address: '/fromprops.html'
         },
         {
           name: 'Array Filter',
-          address: '/arrayfilter.html',
+          address: '/arrayfilter.html'
         },
         {
           name: 'Use Array Map',
-          address: '/usearraymap.html',
+          address: '/usearraymap.html'
         },
         {
           name: 'Sibling Elements',
-          address: '/siblingelements.html',
+          address: '/siblingelements.html'
         },
         {
           name: 'Change Inline CSS',
-          address: '/changeinlinecss.html',
+          address: '/changeinlinecss.html'
         },
-      ],
+        {
+          name: 'Render On Server',
+          address: '/renderonserver.html'
+        }
+      ]
     };
   }
 
