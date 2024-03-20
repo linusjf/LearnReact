@@ -15,6 +15,14 @@ class Examples extends React.Component {
           name: 'Use Array Map',
           address: '/usearraymap.html',
         },
+        {
+          name: 'Sibling Elements',
+          address: '/siblingelements.html',
+        },
+        {
+          name: 'Change Inline CSS',
+          address: '/changeinlinecss.html',
+        },
       ],
     };
   }

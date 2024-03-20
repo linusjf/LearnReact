@@ -1,4 +1,3 @@
-/* eslint no-unused-vars: 0 */
 class GateKeeper extends React.Component {
   constructor(props) {
     super(props);
@@ -25,3 +24,7 @@ class GateKeeper extends React.Component {
     );
   }
 }
+
+const container = document.getElementById('root');
+const root = ReactDOM.createRoot(container);
+root.render(<GateKeeper />);

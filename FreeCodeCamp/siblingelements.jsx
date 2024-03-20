@@ -1,4 +1,3 @@
-/* eslint no-unused-vars: 0 */ // --> OFF
 const frontEndFrameworks = [
   'React',
   'Angular',
@@ -21,3 +20,6 @@ function Frameworks() {
     </div>
   );
 }
+const container = document.getElementById('root');
+const root = ReactDOM.createRoot(container);
+root.render(<Frameworks />);
