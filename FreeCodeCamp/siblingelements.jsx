@@ -1,3 +1,4 @@
+/* eslint no-unused-vars: 0 */ // --> OFF
 const frontEndFrameworks = [
   'React',
   'Angular',
@@ -9,8 +10,7 @@ const frontEndFrameworks = [
 
 function Frameworks() {
   const frameworks = (fm) => {
-    return;
-    <li key={fm}>{fm}</li>;
+    return <li key={fm}>{fm}</li>;
   };
 
   const renderFrameworks = frontEndFrameworks.map(frameworks);

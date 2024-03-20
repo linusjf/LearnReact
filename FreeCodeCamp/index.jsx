@@ -21,7 +21,9 @@ class Examples extends React.Component {
 
   render() {
     const examples = this.state.examples.map((example) => (
-      <a href={example.address}>{example.name}</a>
+      <a key={example.name} href={example.address}>
+        {example.name}
+      </a>
     ));
     return examples;
   }

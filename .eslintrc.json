@@ -8,12 +8,29 @@
     "eslint:recommended",
     "plugin:react/recommended"
   ],
+  "globals": {
+    "JSX": true,
+    "PropTypes": true,
+    "React": true,
+    "ReactDOM": true,
+    "ReactDOMServer": true
+  },
   "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
   "plugins": [
     "react"
   ],
-  "rules": {}
+  "rules": {
+    "require-jsdoc": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
 }

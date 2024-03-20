@@ -118,7 +118,7 @@ if ! test -z "$files"; then
   echo -e "${GREEN}Executing eslint for jsx...${ENDCOLOR}"
   echo "$files" |
     parallel -X --bar -j "$PROCS" -I% \
-      eslint --fix %
+      eslint --fix --color %
   SUCCESS=$((SUCCESS + $?))
 fi
 end=$(date +%s)

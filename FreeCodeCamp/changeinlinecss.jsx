@@ -1,3 +1,4 @@
+/* eslint no-unused-vars: 0 */
 class GateKeeper extends React.Component {
   constructor(props) {
     super(props);
@@ -14,7 +15,7 @@ class GateKeeper extends React.Component {
     const dangerStyle = {border: '3px solid red'};
     return (
       <div>
-        <h3>Don't Type Too Much:</h3>
+        <h3>Don&rsquo;t Type Too Much:</h3>
         <input
           style={this.state.input.length > 15 ? dangerStyle : inputStyle}
           value={this.state.input}
