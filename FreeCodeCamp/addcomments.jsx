@@ -5,3 +5,7 @@ const JSX = (
     <p>Here&apos;s a subtitle</p>
   </div>
 );
+
+const container = document.getElementById('root');
+const root = ReactDOM.createRoot(container);
+root.render(JSX);

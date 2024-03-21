@@ -6,7 +6,7 @@
 
 nav {
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   align-items: flex-start;
   justify-content: flex-start;
   font-size: 2rem;

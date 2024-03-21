@@ -12,7 +12,6 @@ Results.propTypes = {
   fiftyFifty: PropTypes.bool
 };
 
-
 class GameOfChance extends React.Component {
   constructor(props) {
     super(props);
