@@ -10,6 +10,10 @@ class Examples extends React.Component {
         {
           name: "Hedy Lamarr",
           address: "/hedylamarr.html"
+        },
+        {
+          name: "Products",
+          address: "/products.html"
         }
       ]
     };
