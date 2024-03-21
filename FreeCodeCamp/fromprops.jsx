@@ -15,12 +15,12 @@ Results.propTypes = {
 class GameOfChance extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {counter: 1};
+    this.state = { counter: 1 };
   }
 
   handleClick = () => {
     this.setState((prevState) => {
-      return {counter: prevState.counter + 1};
+      return { counter: prevState.counter + 1 };
     });
   };
 
