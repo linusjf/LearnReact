@@ -132,6 +132,9 @@ dist
 # tidy
 tidy.out
 
+# git commit message file
+**/commit.txt
+
 # linter output files
 *.out
 *.wsout
