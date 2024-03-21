@@ -14,6 +14,10 @@ class Examples extends React.Component {
         {
           name: "Products",
           address: "/products.html"
+        },
+        {
+          name: "Counters",
+          address: "/counters.html"
         }
       ]
     };
