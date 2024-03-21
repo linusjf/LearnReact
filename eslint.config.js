@@ -3,6 +3,7 @@ const react = require("eslint-plugin-react");
 module.exports = [{
   files: ["**/*.jsx", "**/*.tsx"],
   languageOptions: {
+    ecmaVersion: "latest",
     globals: {
       JSX: true,
       PropTypes: true,
@@ -17,6 +18,10 @@ module.exports = [{
       ecmaVersion: "latest",
       sourceType: "module",
     },
+  },
+  linterOptions: {
+    noInlineConfig: false,
+    reportUnusedDisableDirectives: "error",
   },
   plugins: {
     react,
