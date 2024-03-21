@@ -11,7 +11,7 @@ declare -i STYLE_SUCCESS=0
 declare -r configFileName="tidy.config"
 declare -i PROCS=$(($(nproc) - 1))
 files=$(find . -type f -name "*.css" ! -name "*.scss.css" ! -name "*.sass.css" \
-  ! -path "**/.git/**" ! -path "**/node_modules/**")
+  ! -path "**/.git/**" ! -path "**/node_modules/**" ! -path "**/build/**")
 if ! test -z "$files"; then
   echo -e "${GREEN}Executing colorguard...${ENDCOLOR}"
   echo "$files" |
@@ -25,7 +25,7 @@ if ! test -z "$files"; then
   STYLE_SUCCESS=$((STYLE_SUCCESS + $?))
 fi
 files=$(find . -type f -name "*.css" ! -name "*.scss.css" ! -name "*.sass.css" ! -name "tw-*.css" \
-  ! -path "**/.git/**" ! -path "**/node_modules/**")
+  ! -path "**/.git/**" ! -path "**/node_modules/**" ! -path "**/build/**")
 if ! test -z "$files"; then
   echo -e "${GREEN}Executing stylelint for css...${ENDCOLOR}"
   echo "$files" |
