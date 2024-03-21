@@ -18,6 +18,10 @@ class Examples extends React.Component {
         {
           name: "Counters",
           address: "/counters.html"
+        },
+        {
+          name: "Count Same",
+          address: "/countsame.html"
         }
       ]
     };
