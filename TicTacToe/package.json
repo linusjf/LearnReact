@@ -16,8 +16,10 @@
     "react-dom": "^18.0.0",
     "react-scripts": "^5.0.0"
   },
-  "devDependencies": {},
-  "main": "/src/index.js",
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+  },
+  "main": "/src/index.jsx",
   "name": "react.dev",
   "scripts": {
     "build": "react-scripts build",

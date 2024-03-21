@@ -1,7 +1,7 @@
 const react = require("eslint-plugin-react");
 
 module.exports = [{
-  files: ["**/*.jsx", "**/*.tsx", "**/*.js"],
+  files: ["**/*.jsx", "**/*.tsx"],
   languageOptions: {
     ecmaVersion: "latest",
     globals: {
