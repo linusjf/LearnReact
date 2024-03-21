@@ -121,6 +121,20 @@ if ! test -z "$files"; then
       eslint --fix --color %
   SUCCESS=$((SUCCESS + $?))
 fi
+files=$(find . -type f -name "*.tsx" \
+  ! -path "**/.git/**" ! -path "**/node_modules/**" ! -path "**/*tailwind.css")
+if ! test -z "$files"; then
+  echo -e "${GREEN}Executing prettier for tsx...${ENDCOLOR}"
+  echo "$files" |
+    parallel -X --bar -j "$PROCS" -I% \
+      prettier --log-level silent --cache --parser babel-ts --write %
+  SUCCESS=$((SUCCESS + $?))
+  echo -e "${GREEN}Executing eslint for tsx...${ENDCOLOR}"
+  echo "$files" |
+    parallel -X --bar -j "$PROCS" -I% \
+      eslint --fix --color %
+  SUCCESS=$((SUCCESS + $?))
+fi
 end=$(date +%s)
 echo -e "${GREEN}Execution time: $((end - start)) seconds.${ENDCOLOR}"
 exit $((SUCCESS + STYLE_SUCCESS))
