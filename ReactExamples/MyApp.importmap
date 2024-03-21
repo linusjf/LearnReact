@@ -1,0 +1,6 @@
+{
+    "imports": {
+        "react": "https://esm.sh/react?dev",
+        "react-dom/client": "https://esm.sh/react-dom/client?dev"
+    }
+}
