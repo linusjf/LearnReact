@@ -1,47 +1,45 @@
 const react = require("eslint-plugin-react");
 
-module.exports = [
-  {
-    files: ["**/*.jsx", "**/*.tsx", "**/*.js"],
-    languageOptions: {
-      ecmaVersion: "latest",
-      globals: {
-        JSX: true,
-        PropTypes: true,
-        React: true,
-        ReactDOM: true,
-        ReactDOMServer: true
+module.exports = [{
+  files: ["**/*.jsx", "**/*.tsx", "**/*.js"],
+  languageOptions: {
+    ecmaVersion: "latest",
+    globals: {
+      JSX: true,
+      PropTypes: true,
+      React: true,
+      ReactDOM: true,
+      ReactDOMServer: true
+    },
+    parserOptions: {
+      ecmaFeatures: {
+        jsx: true
       },
-      parserOptions: {
-        ecmaFeatures: {
-          jsx: true
-        },
-        ecmaVersion: "latest",
-        sourceType: "module"
+      ecmaVersion: "latest",
+      sourceType: "module"
+    }
+  },
+  linterOptions: {
+    noInlineConfig: false,
+    reportUnusedDisableDirectives: "error"
+  },
+  plugins: {
+    react
+  },
+  rules: {
+    "comma-dangle": ["warn", "never"],
+    quotes: [
+      "warn",
+      "double",
+      {
+        avoidEscape: true
       }
-    },
-    linterOptions: {
-      noInlineConfig: false,
-      reportUnusedDisableDirectives: "error"
-    },
-    plugins: {
-      react
-    },
-    rules: {
-      "comma-dangle": ["warn", "never"],
-      quotes: [
-        "warn",
-        "double",
-        {
-          avoidEscape: true
-        }
-      ],
-      "require-jsdoc": "off"
-    },
-    settings: {
-      react: {
-        version: "detect"
-      }
+    ],
+    "require-jsdoc": "off"
+  },
+  settings: {
+    react: {
+      version: "detect"
     }
   }
-];
+}];
