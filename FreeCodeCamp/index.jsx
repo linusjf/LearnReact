@@ -4,6 +4,14 @@ class Examples extends React.Component {
     this.state = {
       examples: [
         {
+          name: 'Complex JSX element',
+          address: '/complexjsxelement.html'
+        },
+        {
+          name: 'Render to DOM',
+          address: '/rendertodom.html'
+        },
+        {
           name: 'From Props',
           address: '/fromprops.html'
         },

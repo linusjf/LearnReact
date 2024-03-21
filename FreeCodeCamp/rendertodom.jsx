@@ -5,5 +5,6 @@ const JSX = (
   </div>
 );
 // Add your code below this line
-const root = document.getElementById("challenge-node");
-ReactDOM.render(JSX, root);
+const container = document.getElementById('challenge-node');
+const root = ReactDOM.createRoot(container);
+root.render(JSX);
