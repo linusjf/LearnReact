@@ -4,44 +4,44 @@ class Examples extends React.Component {
     this.state = {
       examples: [
         {
-          name: 'Hello JSX',
-          address: '/hello.html'
+          name: "Hello JSX",
+          address: "/hello.html"
         },
         {
-          name: 'Complex JSX element',
-          address: '/complexjsxelement.html'
+          name: "Complex JSX element",
+          address: "/complexjsxelement.html"
         },
         {
-          name: 'Add comments',
-          address: '/addcomments.html'
+          name: "Add comments",
+          address: "/addcomments.html"
         },
         {
-          name: 'Render to DOM',
-          address: '/rendertodom.html'
+          name: "Render to DOM",
+          address: "/rendertodom.html"
         },
         {
-          name: 'From Props',
-          address: '/fromprops.html'
+          name: "From Props",
+          address: "/fromprops.html"
         },
         {
-          name: 'Array Filter',
-          address: '/arrayfilter.html'
+          name: "Array Filter",
+          address: "/arrayfilter.html"
         },
         {
-          name: 'Use Array Map',
-          address: '/usearraymap.html'
+          name: "Use Array Map",
+          address: "/usearraymap.html"
         },
         {
-          name: 'Sibling Elements',
-          address: '/siblingelements.html'
+          name: "Sibling Elements",
+          address: "/siblingelements.html"
         },
         {
-          name: 'Change Inline CSS',
-          address: '/changeinlinecss.html'
+          name: "Change Inline CSS",
+          address: "/changeinlinecss.html"
         },
         {
-          name: 'Render On Server',
-          address: '/renderonserver.html'
+          name: "Render On Server",
+          address: "/renderonserver.html"
         }
       ]
     };
@@ -57,6 +57,6 @@ class Examples extends React.Component {
   }
 }
 
-const container = document.getElementById('root');
+const container = document.getElementById("root");
 const root = ReactDOM.createRoot(container);
 root.render(<Examples />);

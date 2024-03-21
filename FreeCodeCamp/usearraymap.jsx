@@ -8,7 +8,7 @@ class MyToDoList extends React.Component {
     super(props);
     // Change code below this line
     this.state = {
-      userInput: '',
+      userInput: "",
       toDoList: []
     };
     // Change code above this line
@@ -16,7 +16,7 @@ class MyToDoList extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
   handleSubmit() {
-    const itemsArray = this.state.userInput.split(',');
+    const itemsArray = this.state.userInput.split(",");
     this.setState({
       toDoList: itemsArray
     });
@@ -49,6 +49,6 @@ class MyToDoList extends React.Component {
   }
 }
 
-const container = document.getElementById('root');
+const container = document.getElementById("root");
 const root = ReactDOM.createRoot(container);
 root.render(<MyToDoList />);

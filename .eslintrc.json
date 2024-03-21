@@ -1,39 +1,46 @@
 {
-  "root": true,
-    "env": {
-        "browser": true,
-        "es2021": true
-    },
-    "extends": [
-        "google",
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "google",
     "eslint:recommended",
-        "plugin:react/recommended"
-    ],
-    "globals": {
+    "plugin:react/recommended"
+  ],
+  "globals": {
     "JSX": true,
     "PropTypes": true,
     "React": true,
     "ReactDOM": true,
     "ReactDOMServer": true
   },
-    "parserOptions": {
-        "ecmaVersion": "latest",
-   "ecmaFeatures": {
+  "parserOptions": {
+    "ecmaFeatures": {
       "jsx": true
     },
-       "sourceType": "module"
-    },
-    "plugins": [
-        "react"
-    ],
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react"
+  ],
+  "root": true,
   "rules": {
     "comma-dangle": [
       "warn",
       "never"
     ],
+    "quotes": [
+      "warn",
+      "double",
+      {
+        "avoidEscape": true
+      }
+    ],
     "require-jsdoc": "off"
   },
-"settings": {
+  "settings": {
     "react": {
       "version": "detect"
     }

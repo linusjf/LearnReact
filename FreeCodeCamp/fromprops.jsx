@@ -4,7 +4,7 @@ class Results extends React.Component {
   }
 
   render() {
-    return <h1>{this.props.fiftyFifty ? 'You Win!' : 'You Lose!'}</h1>;
+    return <h1>{this.props.fiftyFifty ? "You Win!" : "You Lose!"}</h1>;
   }
 }
 
@@ -30,11 +30,11 @@ class GameOfChance extends React.Component {
       <div>
         <button onClick={this.handleClick}>Play Again</button>
         <Results fiftyFifty={expression} />
-        <p>{'Turn: ' + this.state.counter}</p>
+        <p>{"Turn: " + this.state.counter}</p>
       </div>
     );
   }
 }
-const container = document.getElementById('root');
+const container = document.getElementById("root");
 const root = ReactDOM.createRoot(container);
 root.render(<GameOfChance />);

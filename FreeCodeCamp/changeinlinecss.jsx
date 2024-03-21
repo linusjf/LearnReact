@@ -1,7 +1,7 @@
 class GateKeeper extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {input: ''};
+    this.state = {input: ""};
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -10,8 +10,8 @@ class GateKeeper extends React.Component {
   }
 
   render() {
-    const inputStyle = {border: '1px solid black'};
-    const dangerStyle = {border: '3px solid red'};
+    const inputStyle = {border: "1px solid black"};
+    const dangerStyle = {border: "3px solid red"};
     return (
       <div>
         <h3>Don&rsquo;t Type Too Much:</h3>
@@ -25,6 +25,6 @@ class GateKeeper extends React.Component {
   }
 }
 
-const container = document.getElementById('root');
+const container = document.getElementById("root");
 const root = ReactDOM.createRoot(container);
 root.render(<GateKeeper />);
