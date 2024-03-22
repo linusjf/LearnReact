@@ -16,6 +16,18 @@ class Examples extends React.Component {
           address: "/addcomments.html"
         },
         {
+          name: "Self Closing Tags",
+          address: "/selfclosing.html"
+        },
+        {
+          name: "HTML Class",
+          address: "/htmlclass.html"
+        },
+        {
+          name: "Create Component",
+          address: "/createcomponent.html"
+        },
+        {
           name: "Render to DOM",
           address: "/rendertodom.html"
         },

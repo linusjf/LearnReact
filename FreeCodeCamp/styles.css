@@ -18,3 +18,9 @@ nav a {
   margin: auto;
   text-align: center;
 }
+
+.my-div {
+  background-color: silver;
+  color: pink;
+  font-size: 3.5rem;
+}
