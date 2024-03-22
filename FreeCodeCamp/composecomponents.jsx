@@ -23,10 +23,10 @@ class NonCitrus extends React.Component {
     return (
       <div>
         <h3>Non-citrus:</h3>
-          <ul>
-            <li>Apple</li>
-            <li>Banana</li>
-            </ul>
+        <ul>
+          <li>Apple</li>
+          <li>Banana</li>
+        </ul>
       </div>
     );
   }
@@ -40,11 +40,11 @@ class Citrus extends React.Component {
     return (
       <div>
         <h3>Citrus:</h3>
-          <ul>
-            <li>Orange</li>
-            <li>Lemon</li>
-            <li>Grapefruit</li>
-            </ul>
+        <ul>
+          <li>Orange</li>
+          <li>Lemon</li>
+          <li>Grapefruit</li>
+        </ul>
       </div>
     );
   }
@@ -65,8 +65,8 @@ class Vegetables extends React.Component {
             <li>Brinjal</li>
             <li>Carrot</li>
             <li>Radish</li>
-            </ul>
-          </div>
+          </ul>
+        </div>
       </div>
     );
   }

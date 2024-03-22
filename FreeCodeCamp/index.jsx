@@ -24,12 +24,20 @@ class Examples extends React.Component {
           address: "/htmlclass.html"
         },
         {
+          name: "Stateless",
+          address: "/stateless.html"
+        },
+        {
           name: "Create Component",
           address: "/createcomponent.html"
         },
         {
           name: "Composition",
           address: "/composition.html"
+        },
+        {
+          name: "Nested Components",
+          address: "/nestedcomponents.html"
         },
         {
           name: "Compose Components",
