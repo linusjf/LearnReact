@@ -7,14 +7,14 @@ class TypesOfFood extends React.Component {
       <div>
         <h1>Types of Food:</h1>
         {/* Change code below this line */}
-<Fruits/>
-<Vegetables/>
+        <Fruits />
+        <Vegetables />
         {/* Change code above this line */}
       </div>
     );
   }
-};
+}
 
 // Change code below this line
 const container = document.getElementById("challenge-node");
-ReactDOM.render(<TypesOfFood/>, container);
+ReactDOM.render(<TypesOfFood />, container);

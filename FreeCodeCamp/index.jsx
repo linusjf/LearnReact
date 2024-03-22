@@ -28,6 +28,14 @@ class Examples extends React.Component {
           address: "/createcomponent.html"
         },
         {
+          name: "Composition",
+          address: "/composition.html"
+        },
+        {
+          name: "Compose Components",
+          address: "/composecomponents.html"
+        },
+        {
           name: "Render to DOM",
           address: "/rendertodom.html"
         },

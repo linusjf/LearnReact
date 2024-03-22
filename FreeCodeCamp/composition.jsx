@@ -14,11 +14,11 @@ class ParentComponent extends React.Component {
     return (
       <div>
         <h1>I am the parent</h1>
-        { /* Change code below this line */ }
-<ChildComponent/>
-
-        { /* Change code above this line */ }
+        <ChildComponent />
       </div>
     );
   }
-};
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<ParentComponent />);
