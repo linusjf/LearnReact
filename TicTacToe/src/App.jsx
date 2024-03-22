@@ -31,7 +31,9 @@ export default function Board() {
   if (winner) {
     status = "Winner: " + winner;
   } else {
-    status = "Next player: " + (xIsNext ? "X" : "O");
+    if (squares.some((x) => x === null))
+      status = "Next player: " + (xIsNext ? "X" : "O");
+    else status = "Game over!";
   }
 
   return (
