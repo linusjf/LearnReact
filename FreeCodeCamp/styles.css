@@ -32,3 +32,14 @@ nav a {
   width: 50%;
   height: 10rem;
 }
+
+.inc,
+.dec,
+.reset {
+  background-color: #8090a0;
+  height: 5rem;
+  width: 25%;
+  margin: 2rem;
+  padding: 1rem;
+  border: double 3px red;
+}

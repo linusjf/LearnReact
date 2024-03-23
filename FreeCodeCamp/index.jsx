@@ -52,6 +52,14 @@ class Examples extends React.Component {
           address: "/overridedefaultprops.html"
         },
         {
+          name: "Simple Counter",
+          address: "/simplecounter.html"
+        },
+        {
+          name: "Toggle",
+          address: "/toggle.html"
+        },
+        {
           name: "Render to DOM",
           address: "/rendertodom.html"
         },

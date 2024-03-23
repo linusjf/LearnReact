@@ -4,11 +4,7 @@ class Counter extends React.Component {
     this.state = {
       count: 0
     };
-    // Change code below this line
-
-    // Change code above this line
   }
-  // Change code below this line
   reset = () => {
     this.setState({
       count: 0
@@ -26,7 +22,7 @@ class Counter extends React.Component {
       count: prevState.count - 1
     }));
   };
-  // Change code above this line
+
   render() {
     return (
       <div>
@@ -44,3 +40,6 @@ class Counter extends React.Component {
     );
   }
 }
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<Counter/>);

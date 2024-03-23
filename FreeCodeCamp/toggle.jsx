@@ -4,32 +4,30 @@ class MyComponent extends React.Component {
     this.state = {
       visibility: false
     };
-    // Change code below this line
-
-    // Change code above this line
   }
-  // Change code below this line
   toggleVisibility = () => {
     this.setState((prevState) => ({
       visibility: !prevState.visibility
     }));
   };
 
-  // Change code above this line
   render() {
     if (this.state.visibility) {
       return (
         <div>
-          <button onClick={this.toggleVisibility}>Click Me</button>
+          <button className="inc"  onClick={this.toggleVisibility}>Click Me</button>
           <h1>Now you see me!</h1>
         </div>
       );
     } else {
       return (
         <div>
-          <button onClick={this.toggleVisibility}>Click Me</button>
+          <button className="inc" onClick={this.toggleVisibility}>Click Me</button>
         </div>
       );
     }
   }
 }
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<MyComponent/>);
