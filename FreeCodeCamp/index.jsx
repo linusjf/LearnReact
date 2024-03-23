@@ -44,6 +44,10 @@ class Examples extends React.Component {
           address: "/composecomponents.html"
         },
         {
+          name: "Use Prop Types",
+          address: "/useproptypes.html"
+        },
+        {
           name: "Use Default Props",
           address: "/usedefaultprops.html"
         },

@@ -15,14 +15,18 @@ class MyComponent extends React.Component {
     if (this.state.visibility) {
       return (
         <div>
-          <button className="inc"  onClick={this.toggleVisibility}>Click Me</button>
+          <button className="inc" onClick={this.toggleVisibility}>
+            Click Me
+          </button>
           <h1>Now you see me!</h1>
         </div>
       );
     } else {
       return (
         <div>
-          <button className="inc" onClick={this.toggleVisibility}>Click Me</button>
+          <button className="inc" onClick={this.toggleVisibility}>
+            Click Me
+          </button>
         </div>
       );
     }
@@ -30,4 +34,4 @@ class MyComponent extends React.Component {
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<MyComponent/>);
+root.render(<MyComponent />);

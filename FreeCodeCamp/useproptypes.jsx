@@ -2,11 +2,9 @@ const Items = (props) => {
   return <h1>Current Quantity of Items in Cart: {props.quantity}</h1>;
 };
 
-// Change code below this line
 Items.propTypes = {
   quantity: PropTypes.number.isRequired
 };
-// Change code above this line
 
 Items.defaultProps = {
   quantity: 0
@@ -20,3 +18,6 @@ class ShoppingCart extends React.Component {
     return <Items quantity={100} />;
   }
 }
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<ShoppingCart />);
