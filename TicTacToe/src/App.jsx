@@ -14,6 +14,8 @@ export default function Board() {
 
   function handleClick(i) {
     if (calculateWinner(squares) || squares[i]) {
+      setSquares(Array(9).fill(null));
+      setXIsNext(true);
       return;
     }
     const nextSquares = squares.slice();
@@ -33,7 +35,8 @@ export default function Board() {
   } else {
     if (squares.some((x) => x === null))
       status = "Next player: " + (xIsNext ? "X" : "O");
-    else status = "Game over!";
+    else
+      status = "Game over!";
   }
 
   return (
