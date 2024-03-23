@@ -2,7 +2,7 @@ class MyComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: 'Initial State',
+      name: "Initial State",
       username: "john"
     };
     this.handleClick = this.handleClick.bind(this);
@@ -23,4 +23,4 @@ class MyComponent extends React.Component {
       </div>
     );
   }
-};
+}

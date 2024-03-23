@@ -2,8 +2,8 @@ class MyForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      input: '',
-      submit: ''
+      input: "",
+      submit: ""
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -16,7 +16,7 @@ class MyForm extends React.Component {
   handleSubmit(event) {
     // Change code below this line
     event.preventDefault();
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       submit: prevState.input
     }));
     // Change code above this line
@@ -26,9 +26,13 @@ class MyForm extends React.Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           {/* Change code below this line */}
-         <input onChange={this.handleChange} type="text" value={this.state.input}/>
+          <input
+            onChange={this.handleChange}
+            type="text"
+            value={this.state.input}
+          />
           {/* Change code above this line */}
-          <button type='submit'>Submit!</button>
+          <button type="submit">Submit!</button>
         </form>
         {/* Change code below this line */}
         <h1>{this.state.submit}</h1>

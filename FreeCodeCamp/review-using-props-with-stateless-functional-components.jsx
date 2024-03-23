@@ -5,11 +5,11 @@ class CampSite extends React.Component {
   render() {
     return (
       <div>
-        <Camper name="Happy"/>
+        <Camper name="Happy" />
       </div>
     );
   }
-};
+}
 // Change code below this line
 
 class Camper extends React.Component {
@@ -17,16 +17,18 @@ class Camper extends React.Component {
     super(props);
   }
   render() {
-    return <>
-    <p>{this.props.name}</p>
-    </>
+    return (
+      <>
+        <p>{this.props.name}</p>
+      </>
+    );
   }
 }
 
 Camper.propTypes = {
   name: PropTypes.string.isRequired
-}
+};
 
 Camper.defaultProps = {
   name: "CamperBot"
-}
+};

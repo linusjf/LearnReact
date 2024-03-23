@@ -3,7 +3,7 @@ class StatefulComponent extends React.Component {
     super(props);
     // Only change code below this line
     this.state = {
-firstName: "Linus"
+      firstName: "Linus"
     };
     // Only change code above this line
   }
@@ -14,4 +14,4 @@ firstName: "Linus"
       </div>
     );
   }
-};
+}
