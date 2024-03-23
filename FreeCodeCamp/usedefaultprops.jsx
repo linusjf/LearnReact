@@ -9,3 +9,6 @@ const ShoppingCart = (props) => {
 ShoppingCart.defaultProps = {
   items: 0
 }
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<ShoppingCart/>);

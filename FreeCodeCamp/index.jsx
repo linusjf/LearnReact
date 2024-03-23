@@ -44,6 +44,14 @@ class Examples extends React.Component {
           address: "/composecomponents.html"
         },
         {
+          name: "Use Default Props",
+          address: "/usedefaultprops.html"
+        },
+        {
+          name: "Override Default Props",
+          address: "/overridedefaultprops.html"
+        },
+        {
           name: "Render to DOM",
           address: "/rendertodom.html"
         },
