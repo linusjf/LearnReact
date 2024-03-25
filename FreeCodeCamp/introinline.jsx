@@ -3,3 +3,6 @@ class Colorful extends React.Component {
     return <div style={{ color: "red", fontSize: "72px" }}>Big Red</div>;
   }
 }
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<Colorful />);

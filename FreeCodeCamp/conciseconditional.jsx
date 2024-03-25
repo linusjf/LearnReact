@@ -12,7 +12,6 @@ class MyComponent extends React.Component {
     }));
   }
   render() {
-    // Change code below this line
     return (
       <div>
         <button onClick={this.toggleDisplay}>Toggle Display</button>
@@ -21,3 +20,6 @@ class MyComponent extends React.Component {
     );
   }
 }
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<MyComponent />);

@@ -136,8 +136,24 @@ class Examples extends React.Component {
           address: "/siblingelements.html"
         },
         {
+          name: "Concise Conditional",
+          address: "/conciseconditional.html"
+        },
+        {
+          name: "Intro to Inline Styles",
+          address: "/introinline.html"
+        },
+        {
+          name: "Inline Styles",
+          address: "/inlinestyles.html"
+        },
+        {
           name: "Change Inline CSS",
           address: "/changeinlinecss.html"
+        },
+        {
+          name: "Should Component Update",
+          address: "/shouldcomponentupdate.html"
         },
         {
           name: "Render On Server",

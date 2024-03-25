@@ -4,9 +4,7 @@ class OnlyEvens extends React.Component {
   }
   shouldComponentUpdate(nextProps, nextState) {
     console.log("Should I update?");
-    // Change code below this line
     return nextProps.value % 2 === 0;
-    // Change code above this line
   }
   componentDidUpdate() {
     console.log("Component re-rendered.");
@@ -38,3 +36,6 @@ class Controller extends React.Component {
     );
   }
 }
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<Controller />);
