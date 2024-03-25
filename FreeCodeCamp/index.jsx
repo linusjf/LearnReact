@@ -40,6 +40,10 @@ class Examples extends React.Component {
           address: "/fromscratch.html"
         },
         {
+          name: "Bind to this",
+          address: "/bind.html"
+        },
+        {
           name: "Composition",
           address: "/composition.html"
         },
@@ -62,6 +66,10 @@ class Examples extends React.Component {
         {
           name: "Override Default Props",
           address: "/overridedefaultprops.html"
+        },
+        {
+          name: "Using Props",
+          address: "/usingprops.html"
         },
         {
           name: "Access Props",

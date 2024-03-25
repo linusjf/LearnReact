@@ -4,9 +4,6 @@ class MyComponent extends React.Component {
     this.state = {
       text: "Hello"
     };
-    // Change code below this line
-
-    // Change code above this line
   }
   handleClick = () => {
     this.setState({
@@ -16,11 +13,12 @@ class MyComponent extends React.Component {
   render() {
     return (
       <div>
-        {/* Change code below this line */}
         <button onClick={this.handleClick}>Click Me</button>
-        {/* Change code above this line */}
         <h1>{this.state.text}</h1>
       </div>
     );
   }
 }
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<MyComponent />);

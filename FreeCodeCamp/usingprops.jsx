@@ -10,7 +10,6 @@ class CampSite extends React.Component {
     );
   }
 }
-// Change code below this line
 
 class Camper extends React.Component {
   constructor(props) {
@@ -32,3 +31,6 @@ Camper.propTypes = {
 Camper.defaultProps = {
   name: "CamperBot"
 };
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<CampSite />);
