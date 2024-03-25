@@ -44,6 +44,14 @@ class Examples extends React.Component {
           address: "/bind.html"
         },
         {
+          name: "Stateful component",
+          address: "/statefulcomponent.html"
+        },
+        {
+          name: "Set state",
+          address: "/setstate.html"
+        },
+        {
           name: "Composition",
           address: "/composition.html"
         },
@@ -78,6 +86,10 @@ class Examples extends React.Component {
         {
           name: "Pass Props",
           address: "/passprops.html"
+        },
+        {
+          name: "Pass array as props",
+          address: "/passarrayasprops.html"
         },
         {
           name: "Simple Counter",

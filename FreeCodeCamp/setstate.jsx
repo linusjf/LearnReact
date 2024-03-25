@@ -8,12 +8,10 @@ class MyComponent extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick() {
-    // Change code below this line
     this.setState({
       name: "React Rocks!",
       username: "lewis"
     });
-    // Change code above this line
   }
   render() {
     return (
@@ -24,3 +22,6 @@ class MyComponent extends React.Component {
     );
   }
 }
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<MyComponent />);
