@@ -3,13 +3,13 @@ class OnlyEvens extends React.Component {
     super(props);
   }
   shouldComponentUpdate(nextProps, nextState) {
-    console.log('Should I update?');
+    console.log("Should I update?");
     // Change code below this line
-    return (nextProps.value % 2 === 0);
+    return nextProps.value % 2 === 0;
     // Change code above this line
   }
   componentDidUpdate() {
-    console.log('Component re-rendered.');
+    console.log("Component re-rendered.");
   }
   render() {
     return <h1>{this.props.value}</h1>;
@@ -25,7 +25,7 @@ class Controller extends React.Component {
     this.addValue = this.addValue.bind(this);
   }
   addValue() {
-    this.setState(state => ({
+    this.setState((state) => ({
       value: state.value + 1
     }));
   }

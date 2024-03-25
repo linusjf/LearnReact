@@ -2,23 +2,22 @@ class MyComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      message: ''
+      message: ""
     };
     this.handleEnter = this.handleEnter.bind(this);
     this.handleKeyPress = this.handleKeyPress.bind(this);
   }
-  // Change code below this line
   componentDidMount() {
-document.addEventListener("keydown", this.handleKeyPress);
+    document.addEventListener("keydown", this.handleKeyPress);
+    document.addEventListener("touchstart", this.handleTouchStart);
   }
   componentWillUnmount() {
     document.removeEventListener("keydown", this.handleKeyPress);
-
+    document.removeEventListener("touchstart", this.handleTouchStart);
   }
-  // Change code above this line
   handleEnter() {
     this.setState((state) => ({
-      message: state.message + 'You pressed the enter key! '
+      message: state.message + "You pressed the enter key! "
     }));
   }
   handleKeyPress(event) {
@@ -26,6 +25,12 @@ document.addEventListener("keydown", this.handleKeyPress);
       this.handleEnter();
     }
   }
+  handleTouchStart = (event) => {
+    event.preventDefault();
+    this.setState((state) => ({
+      message: state.message + "You pressed touch start! "
+    }));
+  };
   render() {
     return (
       <div>
@@ -33,4 +38,7 @@ document.addEventListener("keydown", this.handleKeyPress);
       </div>
     );
   }
-};
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<MyComponent />);

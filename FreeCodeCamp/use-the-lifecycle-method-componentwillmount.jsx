@@ -8,6 +8,6 @@ class MyComponent extends React.Component {
     // Change code above this line
   }
   render() {
-    return <div />
+    return <div />;
   }
-};
+}

@@ -92,6 +92,10 @@ class Examples extends React.Component {
           address: "/passarrayasprops.html"
         },
         {
+          name: "Event listeners",
+          address: "/eventlisteners.html"
+        },
+        {
           name: "Simple Counter",
           address: "/simplecounter.html"
         },

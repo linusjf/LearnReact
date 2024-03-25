@@ -7,8 +7,7 @@ class CheckUserAge extends React.Component {
   constructor(props) {
     super(props);
     // Change code below this line
-    this.state = 
-    {
+    this.state = {
       input: "",
       userAge: ""
     };
@@ -19,11 +18,11 @@ class CheckUserAge extends React.Component {
   handleChange(e) {
     this.setState({
       input: e.target.value,
-      userAge: ''
+      userAge: ""
     });
   }
   submit() {
-    this.setState(state => ({
+    this.setState((state) => ({
       userAge: state.input
     }));
   }
@@ -36,13 +35,17 @@ class CheckUserAge extends React.Component {
         <h3>Enter Your Age to Continue</h3>
         <input
           style={inputStyle}
-          type='number'
+          type="number"
           value={this.state.input}
           onChange={this.handleChange}
         />
         <br />
         {/* Change code below this line */}
-{this.state.userAge == "" ? buttonOne : this.state.userAge < 18 ? buttonThree : buttonTwo}
+        {this.state.userAge == ""
+          ? buttonOne
+          : this.state.userAge < 18
+            ? buttonThree
+            : buttonTwo}
         {/* Change code above this line */}
       </div>
     );

@@ -2,27 +2,29 @@ class MyApp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      inputValue: ''
-    }
-    
+      inputValue: ""
+    };
   }
-  handleChange = (event)  => {
+  handleChange = (event) => {
     this.setState({
       inputValue: event.target.value
     });
-  }
+  };
 
   render() {
     return (
-       <div>
-        { /* Change code below this line */ }
-       <GetInput input={this.state.inputValue} handleChange={this.handleChange}/>
-       <RenderInput input={this.state.inputValue} />
-        { /* Change code above this line */ }
-       </div>
+      <div>
+        {/* Change code below this line */}
+        <GetInput
+          input={this.state.inputValue}
+          handleChange={this.handleChange}
+        />
+        <RenderInput input={this.state.inputValue} />
+        {/* Change code above this line */}
+      </div>
     );
   }
-};
+}
 
 class GetInput extends React.Component {
   constructor(props) {
@@ -32,13 +34,11 @@ class GetInput extends React.Component {
     return (
       <div>
         <h3>Get Input:</h3>
-        <input
-          value={this.props.input}
-          onChange={this.props.handleChange}/>
+        <input value={this.props.input} onChange={this.props.handleChange} />
       </div>
     );
   }
-};
+}
 
 class RenderInput extends React.Component {
   constructor(props) {
@@ -52,4 +52,4 @@ class RenderInput extends React.Component {
       </div>
     );
   }
-};
+}
