@@ -148,6 +148,10 @@ class Examples extends React.Component {
           address: "/ternary.html"
         },
         {
+          name: "Advanced Javascript",
+          address: "/advancedjavascript.html"
+        },
+        {
           name: "Intro to Inline Styles",
           address: "/introinline.html"
         },
@@ -162,6 +166,14 @@ class Examples extends React.Component {
         {
           name: "Should Component Update",
           address: "/shouldcomponentupdate.html"
+        },
+        {
+          name: "Component Will Mount",
+          address: "/componentwillmount.html"
+        },
+        {
+          name: "Component Did Mount",
+          address: "/componentdidmount.html"
         },
         {
           name: "Render On Server",

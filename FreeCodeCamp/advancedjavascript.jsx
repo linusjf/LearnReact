@@ -62,12 +62,11 @@ class MagicEightBall extends React.Component {
         <button onClick={this.ask}>Ask the Magic Eight Ball!</button>
         <br />
         <h3>Answer:</h3>
-        <p>
-          {/* Change code below this line */}
-          {answer}
-          {/* Change code above this line */}
-        </p>
+        <p>{answer}</p>
       </div>
     );
   }
 }
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<MagicEightBall />);

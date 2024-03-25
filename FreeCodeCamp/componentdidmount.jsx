@@ -6,19 +6,20 @@ class MyComponent extends React.Component {
     };
   }
   componentDidMount() {
-    setTimeout(() => {
+    setInterval(() => {
       this.setState({
-        activeUsers: 1273
+        activeUsers: Math.floor(Math.random() * 1000 + 1000)
       });
     }, 2500);
   }
   render() {
     return (
       <div>
-        {/* Change code below this line */}
         <h1>Active Users: {this.state.activeUsers}</h1>
-        {/* Change code above this line */}
       </div>
     );
   }
 }
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<MyComponent />);

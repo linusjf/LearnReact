@@ -3,11 +3,12 @@ class MyComponent extends React.Component {
     super(props);
   }
   componentWillMount() {
-    // Change code below this line
     console.log("Mounting component");
-    // Change code above this line
   }
   render() {
     return <div />;
   }
 }
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<MyComponent />);
