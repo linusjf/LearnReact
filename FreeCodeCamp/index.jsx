@@ -136,8 +136,16 @@ class Examples extends React.Component {
           address: "/siblingelements.html"
         },
         {
+          name: "If Else Condition",
+          address: "/ifelsecondition.html"
+        },
+        {
           name: "Concise Conditional",
           address: "/conciseconditional.html"
+        },
+        {
+          name: "Ternary Conditional",
+          address: "/ternary.html"
         },
         {
           name: "Intro to Inline Styles",
