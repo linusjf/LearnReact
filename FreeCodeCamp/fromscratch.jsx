@@ -1,4 +1,3 @@
-// Change code below this line
 class MyComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -12,5 +11,5 @@ class MyComponent extends React.Component {
   }
 }
 
-const root = document.getElementById("challenge-node");
+const root = document.getElementById("root");
 ReactDOM.render(<MyComponent />, root);

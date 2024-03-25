@@ -14,30 +14,27 @@ class MyForm extends React.Component {
     });
   }
   handleSubmit(event) {
-    // Change code below this line
     event.preventDefault();
     this.setState((prevState) => ({
       submit: prevState.input
     }));
-    // Change code above this line
   }
   render() {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          {/* Change code below this line */}
           <input
             onChange={this.handleChange}
             type="text"
             value={this.state.input}
           />
-          {/* Change code above this line */}
           <button type="submit">Submit!</button>
         </form>
-        {/* Change code below this line */}
         <h1>{this.state.submit}</h1>
-        {/* Change code above this line */}
       </div>
     );
   }
 }
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<MyForm />);

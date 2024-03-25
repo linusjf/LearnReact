@@ -6,12 +6,14 @@ class MyComponent extends React.Component {
     };
   }
   render() {
+    const name = this.state.name;
     return (
       <div>
-        {/* Change code below this line */}
-        <h1>{this.state.name}</h1>
-        {/* Change code above this line */}
+        <h1>{name}</h1>
       </div>
     );
   }
 }
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<MyComponent />);

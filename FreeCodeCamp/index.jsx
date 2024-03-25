@@ -28,8 +28,16 @@ class Examples extends React.Component {
           address: "/stateless.html"
         },
         {
+          name: "Another way",
+          address: "/anotherway.html"
+        },
+        {
           name: "Create Component",
           address: "/createcomponent.html"
+        },
+        {
+          name: "From Scratch",
+          address: "/fromscratch.html"
         },
         {
           name: "Composition",
@@ -76,8 +84,20 @@ class Examples extends React.Component {
           address: "/rendertodom.html"
         },
         {
+          name: "Render State",
+          address: "/renderstate.html"
+        },
+        {
           name: "From Props",
           address: "/fromprops.html"
+        },
+        {
+          name: "Controlled Input",
+          address: "/controlledinput.html"
+        },
+        {
+          name: "Controlled Form",
+          address: "/controlledform.html"
         },
         {
           name: "Array Filter",
