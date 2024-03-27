@@ -13,7 +13,8 @@
       "atrules": false,
       "ignoreProperties": [
         "[$][A-Za-z_0-9-]+",
-        "parent-selector{1}"
+        "parent-selector{1}",
+        "composes"
       ],
       "ignoreValue": "(.*[$].*)|(math.*)|([&])",
       "properties": {
@@ -79,7 +80,8 @@
         "checkPrefixed": true,
         "ignoreAtRules": [],
         "ignoreProperties": [
-          "parent-selector"
+          "parent-selector",
+          "composes"
         ],
         "ignoreSelectors": [],
         "severity": "error"
