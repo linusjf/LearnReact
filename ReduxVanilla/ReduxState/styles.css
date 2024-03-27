@@ -1,0 +1,52 @@
+/* Root variables */
+
+/* Reset */
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+/* Specific Classes */
+body {
+  background-color: #222;
+  color: #222;
+  font-family: Futura, Arial, sans-serif;
+  font-size: 1rem;
+}
+
+main {
+  margin: 10vh auto;
+  max-width: 50vw;
+  background-color: #fff;
+}
+
+custom-button {
+  display: block;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: #000;
+  color: #fff;
+  letter-spacing: 1px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+custom-button:hover {
+  background-color: #78dce8;
+  cursor: pointer;
+}
+
+custom-paragraph p {
+  padding: 1rem;
+  max-width: 90vw;
+}
+
+/* Media Queries */
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .custom-element {
+    max-width: 50vw;
+  }
+}
