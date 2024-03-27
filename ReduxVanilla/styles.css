@@ -59,7 +59,8 @@ custom-button:hover {
   cursor: pointer;
 }
 
-custom-element p {
+custom-element p,
+custom-paragraph p {
   padding: 1rem;
   max-width: 90vw;
 }

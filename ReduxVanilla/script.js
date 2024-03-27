@@ -12,9 +12,7 @@ const clickActionsSlice = RTK.createSlice({
   }
 });
 
-const {
-  clickAction
-} = clickActionsSlice.actions;
+const { clickAction } = clickActionsSlice.actions;
 
 // Redux Store
 
@@ -33,6 +31,27 @@ store.subscribe(() => {
 });
 
 // Web Components
+
+class Paragraph extends HTMLElement {
+  constructor() {
+    super();
+
+    let text = this.getAttribute("data-text");
+
+    if (text) {
+      const p = document.createElement("p");
+      p.innerText = text;
+
+      const actionText = () => {
+        p.innerText = text + " - " + store.getState().clickActions;
+      };
+      store.subscribe(actionText);
+
+      this.appendChild(p);
+    }
+  }
+}
+customElements.define("custom-paragraph", Paragraph);
 
 class Element extends HTMLElement {
   constructor() {
