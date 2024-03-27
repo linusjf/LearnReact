@@ -15,7 +15,9 @@ const counterReducer = (state = 0, action) => {
 const LOGIN = "LOGIN";
 const LOGOUT = "LOGOUT";
 
-const authReducer = (state = { authenticated: false }, action) => {
+const authReducer = (state = {
+  authenticated: false
+}, action) => {
   switch (action.type) {
     case LOGIN:
       return {

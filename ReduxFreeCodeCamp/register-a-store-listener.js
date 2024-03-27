@@ -21,9 +21,15 @@ const handleDispatch = () => {
 store.subscribe(handleDispatch);
 // Change code above this line
 
-store.dispatch({ type: ADD });
+store.dispatch({
+  type: ADD
+});
 console.log(count);
-store.dispatch({ type: ADD });
+store.dispatch({
+  type: ADD
+});
 console.log(count);
-store.dispatch({ type: ADD });
+store.dispatch({
+  type: ADD
+});
 console.log(count);

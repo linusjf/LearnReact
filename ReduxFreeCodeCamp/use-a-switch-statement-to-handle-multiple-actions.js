@@ -6,9 +6,13 @@ const authReducer = (state = defaultState, action) => {
   // Change code below this line
   switch (action.type) {
     case "LOGIN":
-      return { authenticated: true };
+      return {
+        authenticated: true
+      };
     case "LOGOUT":
-      return { authenticated: false };
+      return {
+        authenticated: false
+      };
     default:
       return state;
   }

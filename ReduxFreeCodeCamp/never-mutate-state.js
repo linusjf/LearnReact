@@ -9,7 +9,7 @@ const todos = [
 ];
 
 const immutableReducer = (state = todos, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case ADD_TO_DO:
       // Don't mutate state here or the tests will fail
       const list = state.slice();

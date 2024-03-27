@@ -5,7 +5,9 @@ const defaultState = {
 const reducer = (state = defaultState, action) => {
   switch (action.type) {
     case "LOGIN":
-      return { login: true };
+      return {
+        login: true
+      };
 
     default:
       return state;
