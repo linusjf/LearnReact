@@ -1,21 +1,25 @@
-const REQUESTING_DATA = 'REQUESTING_DATA'
-const RECEIVED_DATA = 'RECEIVED_DATA'
+const REQUESTING_DATA = "REQUESTING_DATA";
+const RECEIVED_DATA = "RECEIVED_DATA";
 
-const requestingData = () => { return {type: REQUESTING_DATA} }
-const receivedData = (data) => { return {type: RECEIVED_DATA, users: data.users} }
+const requestingData = () => {
+  return { type: REQUESTING_DATA };
+};
+const receivedData = (data) => {
+  return { type: RECEIVED_DATA, users: data.users };
+};
 
 const handleAsync = () => {
-  return function(dispatch) {
+  return function (dispatch) {
     // Dispatch request action here
     dispatch(requestingData());
-setTimeout(function() {
+    setTimeout(function () {
       let data = {
-        users: ['Jeff', 'William', 'Alice']
-      }
+        users: ["Jeff", "William", "Alice"]
+      };
       // Dispatch received data action here
-dispatch(receivedData(data));
+      dispatch(receivedData(data));
     }, 2500);
-  }
+  };
 };
 
 const defaultState = {
@@ -24,17 +28,17 @@ const defaultState = {
 };
 
 const asyncDataReducer = (state = defaultState, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case REQUESTING_DATA:
       return {
         fetching: true,
         users: []
-      }
+      };
     case RECEIVED_DATA:
       return {
         fetching: false,
         users: action.users
-      }
+      };
     default:
       return state;
   }

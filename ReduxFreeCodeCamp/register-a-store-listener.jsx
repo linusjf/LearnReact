@@ -1,7 +1,7 @@
-const ADD = 'ADD';
+const ADD = "ADD";
 
 const reducer = (state = 0, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case ADD:
       return state + 1;
     default:
@@ -21,9 +21,9 @@ const handleDispatch = () => {
 store.subscribe(handleDispatch);
 // Change code above this line
 
-store.dispatch({type: ADD});
+store.dispatch({ type: ADD });
 console.log(count);
-store.dispatch({type: ADD});
+store.dispatch({ type: ADD });
 console.log(count);
-store.dispatch({type: ADD});
+store.dispatch({ type: ADD });
 console.log(count);

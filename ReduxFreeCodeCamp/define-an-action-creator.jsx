@@ -1,7 +1,7 @@
 const action = {
-  type: 'LOGIN'
-}
+  type: "LOGIN"
+};
 // Define an action creator here:
 const actionCreator = () => {
   return action;
-}
+};
