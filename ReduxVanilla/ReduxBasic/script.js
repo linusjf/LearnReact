@@ -1,15 +1,22 @@
 import * as Redux from "https://unpkg.com/redux@latest/dist/redux.browser.mjs";
 
-function counter(state, action) {
+function counter(state = {
+  counter: 0,
+  clicks: 0
+}, action) {
   if (typeof state === "undefined") {
     return 0;
   }
 
   switch (action.type) {
     case "INCREMENT":
-      return state + 1;
+      return {
+        counter: state.counter + 1, clicks: state.clicks + 1
+      };
     case "DECREMENT":
-      return state - 1;
+      return {
+        counter: state.counter - 1, clicks: state.clicks + 1
+      };
     default:
       return state;
   }
@@ -17,9 +24,15 @@ function counter(state, action) {
 
 var store = Redux.createStore(counter);
 var valueEl = document.getElementById("value");
+var clicksEl = document.getElementById("clicks");
 
 function render() {
-  valueEl.innerHTML = store.getState().toString();
+  const val = store.getState().counter;
+  valueEl.innerHTML = val.toString();
+  clicksEl.innerHTML = store.getState().clicks.toString();
+  const btnOddInc = document.getElementById("increment-if-odd");
+  if (val % 2 === 0) btnOddInc.setAttribute("disabled", "disabled");
+  else btnOddInc.removeAttribute("disabled");
 }
 
 render();
@@ -40,7 +53,7 @@ document.getElementById("decrement").addEventListener("click", function() {
 document
   .getElementById("increment-if-odd")
   .addEventListener("click", function() {
-    if (store.getState() % 2 !== 0) {
+    if (store.getState().value % 2 !== 0) {
       store.dispatch({
         type: "INCREMENT"
       });
