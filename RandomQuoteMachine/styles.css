@@ -1,0 +1,16 @@
+.quote-content {
+  background-color: #222;
+}
+
+.quote-author {
+  background-color: #444;
+}
+
+.new-quote-button {
+  background-color: #24f;
+}
+
+.tweet-quote {
+  height: 2rem;
+  width: 2rem;
+}

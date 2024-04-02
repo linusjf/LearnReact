@@ -32,7 +32,24 @@ class RandomQuote extends React.Component {
   }
 
   render() {
-    return <section id="quote-box"></section>;
+    return (
+      <section id="quote-box" className="quote-box">
+        <div id="text" className="quote-content">
+          {this.state.content}
+        </div>
+        <p id="author" className="quote-author">
+          {this.state.author}
+        </p>
+        <button id="new-quote" className="new-quote-button">
+          New Quote
+        </button>
+        <a
+          href="https://twitter.com/intent/tweet"
+          id="tweet-quote"
+          className="tweet-quote"
+        ></a>
+      </section>
+    );
   }
 }
 
