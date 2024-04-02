@@ -1,20 +1,17 @@
 // Redux:
-const ADD = 'ADD';
+const ADD = "ADD";
 
 const addMessage = (message) => {
   return {
     type: ADD,
     message: message
-  }
+  };
 };
 
 const messageReducer = (state = [], action) => {
   switch (action.type) {
     case ADD:
-      return [
-        ...state,
-        action.message
-      ];
+      return [...state, action.message];
     default:
       return state;
   }
@@ -27,9 +24,9 @@ class Presentational extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      input: '',
+      input: "",
       messages: []
-    }
+    };
     this.handleChange = this.handleChange.bind(this);
     this.submitMessage = this.submitMessage.bind(this);
   }
@@ -42,7 +39,7 @@ class Presentational extends React.Component {
     this.setState((state) => {
       const currentMessage = state.input;
       return {
-        input: '',
+        input: "",
         messages: state.messages.concat(currentMessage)
       };
     });
@@ -51,34 +48,30 @@ class Presentational extends React.Component {
     return (
       <div>
         <h2>Type in a new Message:</h2>
-        <input
-          value={this.state.input}
-          onChange={this.handleChange}/><br/>
+        <input value={this.state.input} onChange={this.handleChange} />
+        <br />
         <button onClick={this.submitMessage}>Submit</button>
         <ul>
-          {this.state.messages.map( (message, idx) => {
-              return (
-                 <li key={idx}>{message}</li>
-              )
-            })
-          }
+          {this.state.messages.map((message, idx) => {
+            return <li key={idx}>{message}</li>;
+          })}
         </ul>
       </div>
     );
   }
-};
+}
 
 // React-Redux:
 const mapStateToProps = (state) => {
-  return { messages: state }
+  return { messages: state };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     submitNewMessage: (newMessage) => {
-       dispatch(addMessage(newMessage))
+      dispatch(addMessage(newMessage));
     }
-  }
+  };
 };
 
 const Provider = ReactRedux.Provider;
@@ -93,8 +86,10 @@ class AppWrapper extends React.Component {
   }
   render() {
     // Complete the return statement:
-    return <Provider store={store}>
-    <Container/>
-    </Provider>;
+    return (
+      <Provider store={store}>
+        <Container />
+      </Provider>
+    );
   }
-};
+}

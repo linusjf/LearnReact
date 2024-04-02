@@ -15,12 +15,12 @@ function counter(
     case "INCREMENT":
       return {
         counter: state.counter + 1,
-        clicks: state.clicks + 1
+          clicks: state.clicks + 1
       };
     case "DECREMENT":
       return {
         counter: state.counter - 1,
-        clicks: state.clicks + 1
+          clicks: state.clicks + 1
       };
     default:
       return state;
@@ -43,13 +43,13 @@ function render() {
 render();
 store.subscribe(render);
 
-document.getElementById("increment").addEventListener("click", function () {
+document.getElementById("increment").addEventListener("click", function() {
   store.dispatch({
     type: "INCREMENT"
   });
 });
 
-document.getElementById("decrement").addEventListener("click", function () {
+document.getElementById("decrement").addEventListener("click", function() {
   store.dispatch({
     type: "DECREMENT"
   });
@@ -57,7 +57,7 @@ document.getElementById("decrement").addEventListener("click", function () {
 
 document
   .getElementById("increment-if-odd")
-  .addEventListener("click", function () {
+  .addEventListener("click", function() {
     if (store.getState().value % 2 !== 0) {
       store.dispatch({
         type: "INCREMENT"
@@ -67,8 +67,8 @@ document
 
 document
   .getElementById("increment-async")
-  .addEventListener("click", function () {
-    setTimeout(function () {
+  .addEventListener("click", function() {
+    setTimeout(function() {
       store.dispatch({
         type: "INCREMENT"
       });
