@@ -1,7 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import PropTypes from "prop-types";
-
 class App extends React.Component {
   constructor(props) {
     super(props);
