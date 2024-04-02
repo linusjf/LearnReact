@@ -1,7 +1,18 @@
-import React, { Component } from "react";
+import React from "react";
+import ReactDOM from "react-dom/client";
 import PropTypes from "prop-types";
 
-export default class RandomQuote extends Component {
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return <RandomQuote />;
+  }
+}
+
+class RandomQuote extends React.Component {
   static propTypes = {
     content: PropTypes.string,
     author: PropTypes.string
@@ -12,7 +23,18 @@ export default class RandomQuote extends Component {
     author: ""
   };
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      content: "",
+      author: ""
+    };
+  }
+
   render() {
-    return <></>;
+    return <section id="quote-box"></section>;
   }
 }
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
