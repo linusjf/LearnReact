@@ -102,7 +102,7 @@ getRandomQuoteIdx = async (index) => {
           href="https://twitter.com/intent/tweet"
           id="tweet-quote"
           className="tweet-quote"
-        ></a>
+        ><i class="fa-brands fa-x-twitter"></i></a>
       </section>
     );
   }

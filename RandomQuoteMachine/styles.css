@@ -11,10 +11,12 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  color: #f00;
 }
 
 .quote-content {
   background-color: #222;
+  min-height: 50vh;
 }
 
 .quote-author {
