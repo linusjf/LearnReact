@@ -17,6 +17,7 @@
 .quote-content {
   background-color: #222;
   min-height: 50vh;
+  overflow: auto;
 }
 
 .quote-author {

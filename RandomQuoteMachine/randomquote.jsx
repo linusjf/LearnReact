@@ -9,16 +9,6 @@ class App extends React.Component {
 }
 
 class RandomQuote extends React.Component {
-  static propTypes = {
-    content: PropTypes.string,
-    author: PropTypes.string
-  };
-
-  static defaultProps = {
-    content: "",
-    author: ""
-  };
-
   constructor(props) {
     super(props);
     this.state = {
@@ -67,7 +57,7 @@ class RandomQuote extends React.Component {
         context: "display",
         page: index,
         number: 1,
-        fields: "content, title, URL, short_URL",
+        fields: "content, title, URL",
         category: "thought for today",
         type: "post",
         status: "publish"
