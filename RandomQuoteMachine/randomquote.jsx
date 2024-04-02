@@ -23,7 +23,9 @@ class RandomQuote extends React.Component {
     super(props);
     this.state = {
       content: "",
-      author: ""
+      author: "",
+      title: "",
+      URL: ""
     };
   }
 
@@ -65,7 +67,7 @@ class RandomQuote extends React.Component {
         context: "display",
         page: index,
         number: 1,
-        fields: "content, title",
+        fields: "content, title, URL, short_URL",
         category: "thought for today",
         type: "post",
         status: "publish"
@@ -76,16 +78,23 @@ class RandomQuote extends React.Component {
     console.log(result);
     const title = result.posts[0].title;
     const content = result.posts[0].content;
+    const URL = result.posts[0].URL;
     const author = title.split(":", 1)[0];
-    const quote = {
+    const quoteData = {
       content: content,
-      author: author
+      author: author,
+      title: title,
+      URL: URL
     };
-    console.log(quote);
-    this.setState(quote);
+    console.log(quoteData);
+    this.setState(quoteData);
   };
 
   render() {
+    const twitterParams = new URLSearchParams({
+      text: this.state.title,
+      url: this.state.URL
+    }).toString();
     return (
       <section id="quote-box" className="quote-box">
         <div
@@ -96,6 +105,13 @@ class RandomQuote extends React.Component {
         <p id="author" className="quote-author">
           {this.state.author}
         </p>
+        <a
+          href={"https://twitter.com/intent/tweet?" + twitterParams}
+          id="tweet-quote"
+          className="tweet-quote"
+        >
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
         <button
           id="new-quote"
           className="new-quote-button"
@@ -104,13 +120,6 @@ class RandomQuote extends React.Component {
         >
           New Quote
         </button>
-        <a
-          href="https://twitter.com/intent/tweet"
-          id="tweet-quote"
-          className="tweet-quote"
-        >
-          <i class="fa-brands fa-x-twitter"></i>
-        </a>
       </section>
     );
   }
