@@ -19,13 +19,16 @@ body {
 }
 
 .quote-content {
+  max-height: 50vh;
+  max-width: 100%;
   min-height: 50vh;
   min-width: 100%;
   overflow: scroll;
+  overflow-y: auto;
   margin: 3px;
   padding: 2px;
-  color: #a00;
-  background-color: #ffeeddff;
+  color: #a00 !important;
+  background-color: #ffeeddff !important;
 }
 
 .quote-author {
@@ -48,4 +51,9 @@ body {
 .tweet-quote {
   margin: auto;
   flex-grow: 1;
+}
+
+img {
+  max-width: 100%;
+  max-height: 50%;
 }
