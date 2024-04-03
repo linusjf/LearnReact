@@ -25,10 +25,10 @@ body {
   min-width: 100%;
   overflow: scroll;
   overflow-y: auto;
-  margin: 3px;
-  padding: 2px;
+  margin: 0.1875rem;
+  padding: 0.125rem;
   color: #a00 !important;
-  background-color: #ffeeddff !important;
+  background-color: #fedf !important;
 }
 
 .quote-author {
@@ -56,4 +56,5 @@ body {
 img {
   max-width: 100%;
   max-height: 50%;
+  z-index: 1;
 }

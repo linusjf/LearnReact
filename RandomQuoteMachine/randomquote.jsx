@@ -67,12 +67,12 @@ class RandomQuote extends React.Component {
     console.log("Fetched from: " + url);
     console.log(result);
     const title = result.posts[0].title;
-    const content = result.posts[0].content;
+    let content = result.posts[0].content;
     const URL = result.posts[0].URL;
     const author = title.split(":", 1)[0];
-    console.log("About to sanitize...");
     const quoteData = {
-      content: HtmlSanitizer.SanitizeHtml(content),
+      // content: HtmlSanitizer.SanitizeHtml(content),
+      content: content,
       author: author,
       title: title,
       URL: URL
@@ -97,23 +97,23 @@ class RandomQuote extends React.Component {
           {this.state.author}
         </p>
         <div className="btns">
-        <a
-          href={"https://twitter.com/intent/tweet?" + twitterParams}
-          id="tweet-quote"
-          className="btn btn-primary btn-large"
-          target="_blank"
-        >
-          <i className="fa-brands fa-x-twitter"></i>
-        </a>
-        <button
-          id="new-quote"
-          className="btn btn-primary btn-large"
-          type="button"
-          onClick={this.handleSubmit}
-        >
-          New Quote
-        </button>
-      </div>
+          <a
+            href={"https://twitter.com/intent/tweet?" + twitterParams}
+            id="tweet-quote"
+            className="btn btn-primary btn-large"
+            target="_blank"
+          >
+            <i className="fa-brands fa-x-twitter"></i>
+          </a>
+          <button
+            id="new-quote"
+            className="btn btn-primary btn-large"
+            type="button"
+            onClick={this.handleSubmit}
+          >
+            New Quote
+          </button>
+        </div>
       </section>
     );
   }
