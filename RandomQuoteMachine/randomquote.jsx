@@ -90,7 +90,8 @@ class RandomQuote extends React.Component {
     }).toString();
     const classes = this.state.retrieved
       ? "spinner-box"
-      : "spinner-grow spinner-box";
+      : "fas fa-spinner animate-spin spinner-box";
+    const spanClasses = "visually-hidden";
     const divClasses =
       "d-block quote-content border border-info border-3 rounded";
     return (
@@ -101,7 +102,7 @@ class RandomQuote extends React.Component {
           dangerouslySetInnerHTML={{ __html: this.state.content }}
         ></div>
         <div className={classes} role="status">
-          <span class="visually-hidden">Loading...</span>
+          <span class={spanClasses}>Retrieving quote...</span>
         </div>
         <p id="author" className="quote-author">
           {this.state.author}
