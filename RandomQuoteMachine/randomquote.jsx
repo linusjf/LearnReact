@@ -15,12 +15,14 @@ class RandomQuote extends React.Component {
       content: "",
       author: "",
       title: "",
-      URL: ""
+      URL: "",
+      retrieved: false
     };
   }
 
   handleSubmit = () => {
-    this.getNewQuote();
+    this.setState({ retrieved: false });
+    setTimeout(this.getNewQuote, 1000);
   };
 
   async componentDidMount() {
@@ -67,15 +69,15 @@ class RandomQuote extends React.Component {
     console.log("Fetched from: " + url);
     console.log(result);
     const title = result.posts[0].title;
-    let content = result.posts[0].content;
+    const content = result.posts[0].content;
     const URL = result.posts[0].URL;
     const author = title.split(":", 1)[0];
     const quoteData = {
-      // content: HtmlSanitizer.SanitizeHtml(content),
-      content: content,
+      content: HtmlSanitizer.SanitizeHtml(content),
       author: author,
       title: title,
-      URL: URL
+      URL: URL,
+      retrieved: true
     };
     console.log(quoteData);
     this.setState(quoteData);
@@ -86,13 +88,21 @@ class RandomQuote extends React.Component {
       text: this.state.title,
       url: this.state.URL
     }).toString();
+    const classes = this.state.retrieved
+      ? "spinner-box"
+      : "spinner-grow spinner-box";
+    const divClasses =
+      "d-block quote-content border border-info border-3 rounded";
     return (
       <section id="quote-box" className="quote-box">
         <div
           id="text"
-          className="quote-content border border-info border-3 rounded"
+          className={divClasses}
           dangerouslySetInnerHTML={{ __html: this.state.content }}
         ></div>
+        <div className={classes} role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
         <p id="author" className="quote-author">
           {this.state.author}
         </p>

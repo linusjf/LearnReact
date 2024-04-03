@@ -2,7 +2,7 @@ body {
   background-color: #1f2e3d;
 }
 
-.quote-box-old {
+.spinner-box {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -19,20 +19,19 @@ body {
 }
 
 .quote-content {
+  margin: 0.1875rem;
   max-height: 50vh;
   max-width: 100%;
-  min-height: 50vh;
+  min-height: auto;
   min-width: 100%;
   overflow: scroll;
   overflow-y: auto;
-  margin: 0.1875rem;
   padding: 0.125rem;
   color: #a00 !important;
-  background-color: #fedf !important;
+  background-color: #feff !important;
 }
 
 .quote-author {
-  background-color: #444;
   display: none;
 }
 
