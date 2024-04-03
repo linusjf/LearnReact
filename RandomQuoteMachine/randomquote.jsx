@@ -100,7 +100,7 @@ class RandomQuote extends React.Component {
         <a
           href={"https://twitter.com/intent/tweet?" + twitterParams}
           id="tweet-quote"
-          className="btn-primary btn-large"
+          className="btn btn-primary btn-large"
           target="_blank"
         >
           <i className="fa-brands fa-x-twitter"></i>

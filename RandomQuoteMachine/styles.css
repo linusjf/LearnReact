@@ -1,3 +1,7 @@
+body {
+  background-color: #1f2e3d;
+}
+
 .quote-box-old {
   position: absolute;
   top: 50%;
@@ -16,11 +20,12 @@
 
 .quote-content {
   min-height: 50vh;
-  min-width: 50vw;
+  min-width: 100%;
   overflow: scroll;
   margin: 3px;
   padding: 2px;
   color: #a00;
+  background-color: #ffeeddff;
 }
 
 .quote-author {
@@ -30,14 +35,17 @@
 
 .btns {
   display: flex;
-  align-items: flex-start;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .new-quote-button {
-  background-color: #24f;
-  align-self: stretch;
+  margin-left: auto;
 }
 
 .tweet-quote {
-  align-self: start;
+  margin: auto;
+  flex-grow: 1;
 }
