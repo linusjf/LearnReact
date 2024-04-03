@@ -70,8 +70,9 @@ class RandomQuote extends React.Component {
     const content = result.posts[0].content;
     const URL = result.posts[0].URL;
     const author = title.split(":", 1)[0];
+    console.log("About to sanitize...");
     const quoteData = {
-      content: content,
+      content: HtmlSanitizer.SanitizeHtml(content),
       author: author,
       title: title,
       URL: URL
@@ -89,28 +90,30 @@ class RandomQuote extends React.Component {
       <section id="quote-box" className="quote-box">
         <div
           id="text"
-          className="quote-content"
+          className="quote-content border border-info border-3 rounded"
           dangerouslySetInnerHTML={{ __html: this.state.content }}
         ></div>
         <p id="author" className="quote-author">
           {this.state.author}
         </p>
+        <div className="btns">
         <a
           href={"https://twitter.com/intent/tweet?" + twitterParams}
           id="tweet-quote"
-          className="tweet-quote"
+          className="btn-primary btn-large"
           target="_blank"
         >
-          <i class="fa-brands fa-x-twitter"></i>
+          <i className="fa-brands fa-x-twitter"></i>
         </a>
         <button
           id="new-quote"
-          className="new-quote-button"
+          className="btn btn-primary btn-large"
           type="button"
           onClick={this.handleSubmit}
         >
           New Quote
         </button>
+      </div>
       </section>
     );
   }

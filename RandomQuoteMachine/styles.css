@@ -12,16 +12,15 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  color: #f00;
 }
 
 .quote-content {
-  background-color: #222;
   min-height: 50vh;
   min-width: 50vw;
   overflow: scroll;
   margin: 3px;
   padding: 2px;
+  color: #a00;
 }
 
 .quote-author {
@@ -29,11 +28,16 @@
   display: none;
 }
 
+.btns {
+  display: flex;
+  align-items: flex-start;
+}
+
 .new-quote-button {
   background-color: #24f;
+  align-self: stretch;
 }
 
 .tweet-quote {
-  height: 2rem;
-  width: 2rem;
+  align-self: start;
 }
