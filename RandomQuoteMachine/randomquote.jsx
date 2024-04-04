@@ -33,8 +33,6 @@ class RandomQuote extends React.Component {
     const url =
       "https://public-api.wordpress.com/rest/v1.1/sites/quiteaquote.in/posts/?" +
       new URLSearchParams({
-        pretty: true,
-        context: "display",
         page: 1,
         number: 1,
         fields: "found",
@@ -55,8 +53,6 @@ class RandomQuote extends React.Component {
     const url =
       "https://public-api.wordpress.com/rest/v1.1/sites/quiteaquote.in/posts/?" +
       new URLSearchParams({
-        pretty: true,
-        context: "display",
         page: index,
         number: 1,
         fields: "content, title, URL",
@@ -102,7 +98,7 @@ class RandomQuote extends React.Component {
           dangerouslySetInnerHTML={{ __html: this.state.content }}
         ></div>
         <div className={classes} role="status">
-          <span class={spanClasses}>Retrieving quote...</span>
+          <span className={spanClasses}>Retrieving quote...</span>
         </div>
         <p id="author" className="quote-author">
           {this.state.author}
