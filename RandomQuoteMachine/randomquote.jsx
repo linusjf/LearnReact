@@ -1,6 +1,7 @@
 class App extends React.Component {
   constructor(props) {
     super(props);
+    HtmlSanitizer.AllowedTags["FIGURE"] = true;
   }
 
   render() {
