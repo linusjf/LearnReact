@@ -2,6 +2,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     HtmlSanitizer.AllowedTags["FIGURE"] = true;
+    delete HtmlSanitizer.AllowedCssStyles["color"];
+    delete HtmlSanitizer.AllowedCssStyles["background-color"];
   }
 
   render() {
