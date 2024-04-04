@@ -25,7 +25,7 @@ class RandomQuote extends React.Component {
 
   handleSubmit = () => {
     this.setState({ retrieved: false });
-    setTimeout(this.getNewQuote, 1000);
+    setTimeout(this.getNewQuote, 500);
   };
 
   async componentDidMount() {
@@ -96,9 +96,12 @@ class RandomQuote extends React.Component {
     }).toString();
     const classes = this.state.retrieved
       ? "spinner-box"
-      : "fas fa-spinner animate-spin spinner-box";
+      : "spinner-grow spinner-box";
     const spanClasses = "visually-hidden";
     const divClasses =
+      "d-block quote-content border border-info border-3 rounded";
+    const btnClasses = this.state.retrieved ?
+      "btn btn-primary btn-large": "btn btn-primary btn-large disabled";
       "d-block quote-content border border-info border-3 rounded";
     return (
       <section id="quote-box" className="quote-box">
@@ -124,7 +127,8 @@ class RandomQuote extends React.Component {
           </a>
           <button
             id="new-quote"
-            className="btn btn-primary btn-large"
+            className={btnClasses}
+            disabled={!this.state.retrieved}
             type="button"
             onClick={this.handleSubmit}
           >
