@@ -3,7 +3,7 @@
 source ./require.sh
 source ./errorhandlers.sh
 source ./colors.sh
-require date htmlhint sed stylelint prettier tidy find parallel colorguard html-validate js-beautify nproc
+require date htmlhint sed stylelint prettier tidy find parallel colorguard html-validate js-beautify nproc mdl mdformat
 start=$(date +%s)
 echo -e "${GREEN}Starting...${ENDCOLOR}"
 declare -i SUCCESS=0
@@ -133,6 +133,20 @@ if ! test -z "$files"; then
   echo "$files" |
     parallel -X --bar -j "$PROCS" -I% \
       eslint --fix --color %
+  SUCCESS=$((SUCCESS + $?))
+fi
+files=$(find . -type f -name "*.md" \
+  ! -path "**/.git/**" ! -path "**/node_modules/**" ! -path "**/*tailwind.css")
+if ! test -z "$files"; then
+  echo -e "${GREEN}Executing mdformat for md...${ENDCOLOR}"
+  echo "$files" |
+    parallel -X --bar -j "$PROCS" -I% \
+      mdformat -- %
+  SUCCESS=$((SUCCESS + $?))
+  echo -e "${GREEN}Executing mdl for md...${ENDCOLOR}"
+  echo "$files" |
+    parallel -X --bar -j "$PROCS" -I% \
+      mdl -- %
   SUCCESS=$((SUCCESS + $?))
 fi
 end=$(date +%s)
