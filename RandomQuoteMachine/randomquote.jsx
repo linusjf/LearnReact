@@ -50,6 +50,13 @@ class RandomQuote extends React.Component {
     await this.getRandomQuoteIdx(rnd);
   };
 
+  stripGettyCodes(content) {
+   const re = /http:[\/][\/]www[.]gettyimages[.]com[\/]detail[\/][0-9]+/g;
+   content = content.replaceAll(re, "");
+   content = content.replaceAll("Embed from Getty Images", "");
+   return content;
+  }
+
   getRandomQuoteIdx = async (index) => {
     const url =
       "https://public-api.wordpress.com/rest/v1.1/sites/quiteaquote.in/posts/?" +
@@ -70,7 +77,7 @@ class RandomQuote extends React.Component {
     const URL = result.posts[0].URL;
     const author = title.split(":", 1)[0];
     const quoteData = {
-      content: HtmlSanitizer.SanitizeHtml(content),
+      content: this.stripGettyCodes(HtmlSanitizer.SanitizeHtml(content)),
       author: author,
       title: title,
       URL: URL,
