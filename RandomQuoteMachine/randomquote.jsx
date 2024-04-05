@@ -127,8 +127,8 @@ class RandomQuote extends React.Component {
     const divClasses =
       "d-block quote-content border border-info border-3 rounded";
     const btnClasses = this.state.retrieved
-      ? "btn btn-primary btn-large"
-      : "btn btn-secondary btn-large disabled";
+      ? "btn btn-primary"
+      : "btn btn-secondary disabled";
     ("d-block quote-content border border-info border-3 rounded");
     return (
       <section id="quote-box" className="quote-box">
@@ -140,9 +140,6 @@ class RandomQuote extends React.Component {
         <div className={classes} role="status">
           <span className={spanClasses}>Retrieving quote...</span>
         </div>
-        <p id="author" className="quote-author">
-          {this.state.author}
-        </p>
         <div className="btns">
           <a
             href={"https://twitter.com/intent/tweet?" + twitterParams}
@@ -152,6 +149,15 @@ class RandomQuote extends React.Component {
           >
             <i className="fa-brands fa-x-twitter"></i>
           </a>
+          <p
+            id="author"
+            className="quote-author text-center align-middle flex-fill border-0 text-truncate"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-title={this.state.title}
+          >
+            {this.state.author}
+          </p>
           <button
             id="new-quote"
             className={btnClasses}

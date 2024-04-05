@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   background-color: #1f2e3d;
   font-family: Roboto, sans-serif !important;
@@ -33,7 +39,8 @@ body {
 }
 
 .quote-author {
-  display: none;
+  color: #060;
+  margin: 0.125rem;
 }
 
 .btns {
@@ -46,7 +53,6 @@ body {
 
 .tweet-quote {
   margin: auto;
-  flex-grow: 1;
 }
 
 img {
