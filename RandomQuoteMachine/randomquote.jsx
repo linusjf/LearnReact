@@ -100,9 +100,10 @@ class RandomQuote extends React.Component {
     const spanClasses = "visually-hidden";
     const divClasses =
       "d-block quote-content border border-info border-3 rounded";
-    const btnClasses = this.state.retrieved ?
-      "btn btn-primary btn-large": "btn btn-primary btn-large disabled";
-      "d-block quote-content border border-info border-3 rounded";
+    const btnClasses = this.state.retrieved
+      ? "btn btn-primary btn-large"
+      : "btn btn-primary btn-large disabled";
+    ("d-block quote-content border border-info border-3 rounded");
     return (
       <section id="quote-box" className="quote-box">
         <div
