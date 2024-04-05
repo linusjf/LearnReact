@@ -44,10 +44,6 @@ body {
   width: 100%;
 }
 
-.new-quote-button {
-  margin-left: auto;
-}
-
 .tweet-quote {
   margin: auto;
   flex-grow: 1;

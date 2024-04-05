@@ -102,7 +102,7 @@ class RandomQuote extends React.Component {
       "d-block quote-content border border-info border-3 rounded";
     const btnClasses = this.state.retrieved
       ? "btn btn-primary btn-large"
-      : "btn btn-primary btn-large disabled";
+      : "btn btn-secondary btn-large disabled";
     ("d-block quote-content border border-info border-3 rounded");
     return (
       <section id="quote-box" className="quote-box">
@@ -121,7 +121,7 @@ class RandomQuote extends React.Component {
           <a
             href={"https://twitter.com/intent/tweet?" + twitterParams}
             id="tweet-quote"
-            className="btn btn-primary btn-large"
+            className={btnClasses}
             target="_blank"
           >
             <i className="fa-brands fa-x-twitter"></i>
