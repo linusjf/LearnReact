@@ -10,32 +10,32 @@ class App extends React.Component {
 }
 
 const customizeHtmlSanitizer = () => {
-    HtmlSanitizer.AllowedTags["FIGURE"] = true;
-    HtmlSanitizer.AllowedTags["ARTICLE"] = true;
-    HtmlSanitizer.AllowedTags["ASIDE"] = true;
-    HtmlSanitizer.AllowedTags["CITE"] = true;
-    HtmlSanitizer.AllowedTags["Q"] = true;
-    HtmlSanitizer.AllowedTags["HGROUP"] = true;
-    HtmlSanitizer.AllowedTags["MARK"] = true;
-    HtmlSanitizer.AllowedTags["OUTPUT"] = true;
-    HtmlSanitizer.AllowedTags["SECTION"] = true;
-    HtmlSanitizer.AllowedTags["ADDRESS"] = true;
-    HtmlSanitizer.AllowedTags["CAPTION"] = true;
-    HtmlSanitizer.AllowedTags["DEL"] = true;
-    HtmlSanitizer.AllowedTags["DETAILS"] = true;
-    HtmlSanitizer.AllowedTags["MAIN"] = true;
-    HtmlSanitizer.AllowedTags["INS"] = true;
-    HtmlSanitizer.AllowedTags["S"] = true;
-    HtmlSanitizer.AllowedTags["SAMP"] = true;
-    HtmlSanitizer.AllowedTags["SUB"] = true;
-    HtmlSanitizer.AllowedTags["SUMMARY"] = true;
-    HtmlSanitizer.AllowedTags["SUP"] = true;
-    HtmlSanitizer.AllowedTags["TEMPLATE"] = true;
-    HtmlSanitizer.AllowedTags["VAR"] = true;
-    HtmlSanitizer.AllowedTags["U"] = true;
-    delete HtmlSanitizer.AllowedCssStyles["color"];
-    delete HtmlSanitizer.AllowedCssStyles["background-color"];
-}
+  HtmlSanitizer.AllowedTags["FIGURE"] = true;
+  HtmlSanitizer.AllowedTags["ARTICLE"] = true;
+  HtmlSanitizer.AllowedTags["ASIDE"] = true;
+  HtmlSanitizer.AllowedTags["CITE"] = true;
+  HtmlSanitizer.AllowedTags["Q"] = true;
+  HtmlSanitizer.AllowedTags["HGROUP"] = true;
+  HtmlSanitizer.AllowedTags["MARK"] = true;
+  HtmlSanitizer.AllowedTags["OUTPUT"] = true;
+  HtmlSanitizer.AllowedTags["SECTION"] = true;
+  HtmlSanitizer.AllowedTags["ADDRESS"] = true;
+  HtmlSanitizer.AllowedTags["CAPTION"] = true;
+  HtmlSanitizer.AllowedTags["DEL"] = true;
+  HtmlSanitizer.AllowedTags["DETAILS"] = true;
+  HtmlSanitizer.AllowedTags["MAIN"] = true;
+  HtmlSanitizer.AllowedTags["INS"] = true;
+  HtmlSanitizer.AllowedTags["S"] = true;
+  HtmlSanitizer.AllowedTags["SAMP"] = true;
+  HtmlSanitizer.AllowedTags["SUB"] = true;
+  HtmlSanitizer.AllowedTags["SUMMARY"] = true;
+  HtmlSanitizer.AllowedTags["SUP"] = true;
+  HtmlSanitizer.AllowedTags["TEMPLATE"] = true;
+  HtmlSanitizer.AllowedTags["VAR"] = true;
+  HtmlSanitizer.AllowedTags["U"] = true;
+  delete HtmlSanitizer.AllowedCssStyles["color"];
+  delete HtmlSanitizer.AllowedCssStyles["background-color"];
+};
 
 class RandomQuote extends React.Component {
   constructor(props) {

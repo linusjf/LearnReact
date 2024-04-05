@@ -37,4 +37,4 @@ Once you're done, submit the URL to your working project with all its tests pass
 
 ## Note: Twitter does not allow links to be loaded in an iframe. Try using the target="\_blank" or target="\_top" attribute on the #tweet-quote element if your tweet won't load. target="\_top" will replace the current tab so make sure your work is saved.
 
-## Solution Link
+## Solution Link: [https://codepen.io/Linus-J-Fernandes/pen/vYMWvod](https://codepen.io/Linus-J-Fernandes/pen/vYMWvod)
