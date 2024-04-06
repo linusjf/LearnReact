@@ -1,0 +1,67 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1f2e3d;
+  font-family: Roboto, sans-serif !important;
+}
+
+.spinner-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.quote-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-height: 100vh;
+  min-height: 100vh;
+  max-width: 90vw;
+  min-width: 90vw;
+  margin: 0 auto;
+}
+
+.quote-content {
+  margin: 0.1875rem;
+  max-height: 50vh;
+  max-width: 100%;
+  min-height: auto;
+  min-width: 100%;
+  overflow: scroll;
+  overflow-y: auto;
+  padding: 0.125rem;
+  color: #a00 !important;
+  background-color: #feff !important;
+}
+
+.quote-author {
+  color: #060;
+  margin: 0.125rem;
+  display: none;
+}
+
+.btns {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.tweet-quote {
+  margin: auto;
+}
+
+img {
+  max-width: 100%;
+  max-height: 50%;
+  z-index: 1;
+}
