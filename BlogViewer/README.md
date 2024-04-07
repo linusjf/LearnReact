@@ -28,4 +28,16 @@ You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and
 
 11. User Story #11: My blog viewer should fetch the new post's author when the #next button is clicked and display it in the #author element.
 
+12. User Story #12: When the #prev button is clicked, my blog viewer should fetch the previous post and display it in the #content element.
+
+13. User Story #13: My blog viewer should fetch the previous post's author when the #prev button is clicked and display it in the #author element.
+
+14. User Story #14: When the #first button is clicked, my blog viewer should fetch the first post and display it in the #content element.
+
+15. User Story #15: My blog viewer should fetch the first post's author when the #first button is clicked and display it in the #author element.
+
+16. User Story #16: When the #last button is clicked, my blog viewer should fetch the last post and display it in the #content element.
+
+17. User Story #17: My blog viewer should fetch the last post's author when the #last button is clicked and display it in the #author element.
+
 ## Solution Link-
