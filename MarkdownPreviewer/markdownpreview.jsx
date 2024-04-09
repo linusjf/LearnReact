@@ -1,3 +1,7 @@
+import React, { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import Markdown from "react-markdown";
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -28,12 +32,17 @@ class MarkdownEditor extends React.Component {
 
   render() {
     return (
-      <section className="section-editor">
-        <textarea id="editor" className="editor"></textarea>;
-      </section>
+      <div>
+        <section
+          autoFocus={true}
+          id="editor"
+          className="section-editor"
+          contentEditable={true}
+        ></section>
+      </div>
     );
   }
 }
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = createRoot(document.getElementById("root"));
 root.render(<App />);

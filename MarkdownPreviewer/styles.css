@@ -12,18 +12,25 @@ body {
 }
 
 .section-editor {
+  min-height: 50vh;
+  max-height: 50vh;
+  min-width: 75vw;
+  max-width: 75vw;
+  width: 75vw;
+  height: 50vh;
+  margin: 5vh auto;
+  scroll-behavior: auto;
+  overflow: auto;
+  color: white;
+  background-color: #1f2e3d22;
+  border: 0.125rem solid green;
+}
+
+.section-editor:focus {
   max-height: 50vh;
   max-width: 75vw;
   min-height: 50vh;
   min-width: 75vw;
-  margin: 5vh auto;
-}
-
-.editor {
-  max-height: 100%;
-  max-width: 100%;
-  min-height: 100%;
-  min-width: 100%;
-  scroll-behavior: auto;
-  overflow: auto;
+  width: 75vw;
+  height: 50vh;
 }
