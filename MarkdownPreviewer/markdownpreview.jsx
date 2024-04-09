@@ -4,11 +4,21 @@ class App extends React.Component {
   }
 
   render() {
-    return <MarkdownPreview />;
+    return <MarkdownPreviewer />;
   }
 }
 
-class MarkdownPreview extends React.Component {
+class MarkdownPreviewer extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return <MarkdownEditor />;
+  }
+}
+
+class MarkdownEditor extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -17,7 +27,11 @@ class MarkdownPreview extends React.Component {
   }
 
   render() {
-    return <section />;
+    return (
+      <section className="section-editor">
+        <textarea id="editor" className="editor"></textarea>;
+      </section>
+    );
   }
 }
 
