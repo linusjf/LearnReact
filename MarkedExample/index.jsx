@@ -35,7 +35,9 @@ const domContainer = document.getElementById("root");
 const root = createRoot(domContainer);
 root.render(
   <StrictMode>
+    <SanitizedHTML html=
     <Markdown># Hello *world*!</Markdown>
+    ></SanitizedHTML>
     <Markdown remarkPlugins={[remarkGfm]}>{markdown}</Markdown>
     <Markdown remarkPlugins={[[remarkGfm, { singleTilde: false }]]}>
       {md}
