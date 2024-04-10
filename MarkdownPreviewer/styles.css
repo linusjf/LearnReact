@@ -11,6 +11,11 @@ body {
   height: 150vh;
 }
 
+.editor-header {
+  height: 2em;
+  font-size: 0.625rem;
+}
+
 .section-editor {
   min-height: 50vh;
   max-height: 50vh;

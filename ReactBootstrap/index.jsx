@@ -37,7 +37,9 @@ class MarkdownEditor extends React.Component {
           id="editor"
           className="section-editor"
           contentEditable={true}
-        >{this.state.input}</section>
+        >
+          {this.state.input}
+        </section>
       </div>
     );
   }
