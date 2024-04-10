@@ -4,8 +4,9 @@ im.textContent = JSON.stringify({
   imports: {
     react: "https://esm.sh/react?dev",
     "react-dom/client": "https://esm.sh/react-dom/client?dev",
-    "marked-react": "https://cdn.jsdelivr.net/npm/marked-react@2.0.0/+esm",
-    "react-markdown": "https://esm.sh/react-markdown@9?bundle"
+    "react-markdown": "https://esm.sh/react-markdown@9?bundle",
+    "remark-gfm": "https://esm.sh/remark-gfm?dev",
+    "react-syntax-highlighter": "https://esm.sh/react-syntax-highlighter?bundle"
   }
 });
 document.currentScript.after(im);

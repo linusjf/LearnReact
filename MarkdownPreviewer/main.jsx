@@ -4,10 +4,7 @@ import Markdown from "react-markdown";
 import { Button } from "react-bootstrap";
 import { Card } from "react-bootstrap";
 import { Form } from "react-bootstrap";
-import {
-  configureStore,
-  createSlice
-} from "@reduxjs/toolkit";
+import { configureStore, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   input: "",
