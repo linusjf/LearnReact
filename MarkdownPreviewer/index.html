@@ -13,8 +13,6 @@
       rel="stylesheet"
     />
     <link href="/styles.css" rel="stylesheet" />
-    <!-- Don't use this in production: -->
-
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script
       async="async"
@@ -28,20 +26,6 @@
   <body>
     <main id="root"></main>
     <script src="/importmap.js"></script>
-    <script
-      data-type="module"
-      src="/markdownpreview.jsx"
-      type="text/babel"
-    ></script>
-    <!--
-      Note: this page is a great way to try React but it's not suitable for production.
-      It slowly compiles JSX with Babel in the browser and uses a large development build of React.
-
-      Read this page for starting a new React project with JSX:
-      https://react.dev/learn/start-a-new-react-project
-
-      Read this page for adding React with JSX to an existing project:
-      https://react.dev/learn/add-react-to-an-existing-project
-    -->
+    <script data-type="module" src="/main.jsx" type="text/babel"></script>
   </body>
 </html>
