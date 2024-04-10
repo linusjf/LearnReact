@@ -16,26 +16,13 @@ body {
   font-size: 0.625rem;
 }
 
-.section-editor {
+.preview {
   min-height: 50vh;
   max-height: 50vh;
-  min-width: 75vw;
-  max-width: 75vw;
-  width: 75vw;
+  width: 100%;
   height: 50vh;
-  margin: 5vh auto;
   scroll-behavior: auto;
   overflow: auto;
   color: white;
   background-color: #1f2e3d22;
-  border: 0.125rem solid green;
-}
-
-.section-editor:focus {
-  max-height: 50vh;
-  max-width: 75vw;
-  min-height: 50vh;
-  min-width: 75vw;
-  width: 75vw;
-  height: 50vh;
 }

@@ -29,7 +29,12 @@ class MarkdownPreviewer extends React.Component {
   }
 
   render() {
-    return <MarkdownEditor />;
+    return (
+      <>
+        <MarkdownEditor />
+        <HTMLPreview />
+      </>
+    );
   }
 }
 
@@ -51,7 +56,9 @@ class MarkdownEditor extends React.Component {
           <p className="flex-fill text-left mt-2 mb-2">Editor</p>
           <i className="fa fa-arrows-alt"></i>
         </Card.Header>
-        <Form.Control as="textarea" id="editor" rows={15} />
+        <Form.Control as="textarea" id="editor" rows={15}>
+          {this.state.input}
+        </Form.Control>
       </Card>
     );
   }
@@ -61,7 +68,7 @@ class HTMLPreview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      html: ""
+      input: ""
     };
   }
 
@@ -75,7 +82,7 @@ class HTMLPreview extends React.Component {
           <p className="flex-fill text-left mt-2 mb-2">Preview</p>
           <i className="fa fa-arrows-alt"></i>
         </Card.Header>
-        <Form.Control as="textarea" id="preview" rows={15} />
+        <Markdown className="preview">{this.state.input}</Markdown>
       </Card>
     );
   }
