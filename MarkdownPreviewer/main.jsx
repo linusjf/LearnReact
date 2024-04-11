@@ -6,6 +6,7 @@ import { Card } from "react-bootstrap";
 import { Form } from "react-bootstrap";
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 import testString from "./markdown.js";
+import { Provider } from "react-redux";
 
 console.log(testString);
 
@@ -15,6 +16,41 @@ const initialState = {
   previewMax: false,
   status: "idle"
 };
+
+const previewerSlice = createSlice({
+  name: "previewer",
+  initialState,
+  // The `reducers` field lets us define reducers and generate associated actions
+  reducers: {
+    togglePreview: (state) => {
+      // Redux Toolkit allows us to write "mutating" logic in reducers. It
+      // doesn't actually mutate the state because it uses the Immer library,
+      // which detects changes to a "draft state" and produces a brand new
+      // immutable state based off those changes
+      state.previewMax = !state.previewMax;
+    },
+    toggleEditor: (state) => {
+      state.editorMax = !state.editorMax;
+    },
+    updateInput: (state, action) => {
+      state.input = action.payload;
+    }
+  }
+});
+
+const { togglePreview, toggleEditor, updateInput } = previewerSlice.actions;
+
+const selectPreviewMax = (state) => state.previewMax;
+const selectEditorMax = (state) => state.editorMax;
+const selectInput = (state) => state.input;
+
+const previewerReducer = previewerSlice.reducer;
+
+const store = configureStore({
+  reducer: {
+    previewer: previewerReducer
+  }
+});
 
 class App extends React.Component {
   constructor(props) {
@@ -92,4 +128,10 @@ class HTMLPreview extends React.Component {
 }
 
 const root = createRoot(document.getElementById("root"));
-root.render(<App />);
+root.render(
+  <StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </StrictMode>
+);
