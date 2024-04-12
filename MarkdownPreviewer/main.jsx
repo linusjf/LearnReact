@@ -7,6 +7,7 @@ import { Form } from "react-bootstrap";
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 import testString from "./markdown.js";
 import { Provider } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 console.log(testString);
 
@@ -95,9 +96,11 @@ class MarkdownEditor extends React.Component {
           <p className="flex-fill text-left mt-2 mb-2">Editor</p>
           <i className="fa fa-arrows-alt"></i>
         </Card.Header>
-        <Form.Control as="textarea" id="editor" rows={15}>
-          {this.state.input}
-        </Form.Control>
+        <Form.Control
+          as="textarea"
+          id="editor"
+          value={this.state.input}
+        ></Form.Control>
       </Card>
     );
   }
