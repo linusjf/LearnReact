@@ -130,7 +130,7 @@ class HTMLPreview extends React.Component {
   render() {
     const cardClass = this.state.max ? "preview-max" : "preview";
     return (
-      <Card>
+      <Card className={cardClass}>
         <Card.Header
           as="div"
           className="header d-flex flex-row bg-primary align-items-center"
@@ -168,7 +168,7 @@ class HTMLPreview extends React.Component {
           )}
         </Card.Header>
         <Markdown
-          className={cardClass}
+          className="htmlpreview"
           remarkPlugins={[remarkGfm]}
           rehypePlugins={[rehypeRaw]}
         >
