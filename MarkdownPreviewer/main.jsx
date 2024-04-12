@@ -169,13 +169,13 @@ class HTMLPreview extends React.Component {
           )}
         </Card.Header>
         <div id="preview" className="htmlpreview">
-        <Markdown
-          remarkPlugins={[remarkGfm, remarkBreaks]}
-          rehypePlugins={[rehypeRaw]}
-        >
-          {this.props.input}
-        </Markdown>
-          </div>
+          <Markdown
+            remarkPlugins={[remarkGfm, remarkBreaks]}
+            rehypePlugins={[rehypeRaw]}
+          >
+            {this.props.input}
+          </Markdown>
+        </div>
       </Card>
     );
   }
