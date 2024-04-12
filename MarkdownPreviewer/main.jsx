@@ -53,17 +53,21 @@ class MarkdownPreviewer extends React.Component {
 class MarkdownEditor extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      max: false
+    };
   }
 
   render() {
+    const btnClasses = this.state.max ? "fa fa-compress": "fa fa-arrows-alt";
     return (
-      <Card>
+      <Card className="editor">
         <Card.Header
           as="div"
           className="editor-header d-flex flex-row bg-primary align-items-center"
         >
           <p className="flex-fill text-left mt-2 mb-2">Editor</p>
-          <i className="fa fa-arrows-alt"></i>
+          <i className={btnClasses}></i>
         </Card.Header>
         <Form.Control
           as="textarea"
@@ -80,11 +84,12 @@ class HTMLPreview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      input: ""
+      max: false
     };
   }
 
   render() {
+    const btnClasses = this.state.max ? "fa fa-compress": "fa fa-arrows-alt";
     return (
       <Card>
         <Card.Header
@@ -92,7 +97,7 @@ class HTMLPreview extends React.Component {
           className="editor-header d-flex flex-row bg-primary align-items-center"
         >
           <p className="flex-fill text-left mt-2 mb-2">Preview</p>
-          <i className="fa fa-arrows-alt"></i>
+          <i className={btnClasses}></i>
         </Card.Header>
         <Markdown
           className="preview"
