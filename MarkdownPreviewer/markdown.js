@@ -236,7 +236,7 @@ eat: it was a [hobbit-hole][1], and that means comfort.
 `;
 
 const escapechars = `
-\* Without the backslash, this would be a bullet in an unordered list.
+\\* Without the backslash, this would be a bullet in an unordered list.
 `;
 
 const testString = headings.concat(
