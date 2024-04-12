@@ -31,7 +31,9 @@ Keep lines left-aligned like this.
 const linebreaks = `
 First line with two spaces after.
 And the next line.
-
+Third line with line break.\n
+And another one.\n
+And another one with three.\n\n\n
 `;
 
 const emphasis = `

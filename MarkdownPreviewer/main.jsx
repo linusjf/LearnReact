@@ -6,6 +6,7 @@ import { Form } from "react-bootstrap";
 import testString from "./markdown.js";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
+import remarkBreaks from "remark-breaks";
 
 class App extends React.Component {
   constructor(props) {
@@ -169,7 +170,7 @@ class HTMLPreview extends React.Component {
         </Card.Header>
         <Markdown
           className="htmlpreview"
-          remarkPlugins={[remarkGfm]}
+          remarkPlugins={[remarkGfm, remarkBreaks]}
           rehypePlugins={[rehypeRaw]}
         >
           {this.props.input}
