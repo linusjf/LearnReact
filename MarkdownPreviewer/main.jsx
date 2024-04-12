@@ -5,6 +5,8 @@ import { Button } from "react-bootstrap";
 import { Card } from "react-bootstrap";
 import { Form } from "react-bootstrap";
 import testString from "./markdown.js";
+import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
 
 console.log(testString);
 
@@ -27,22 +29,22 @@ class MarkdownPreviewer extends React.Component {
   }
 
   handleEdit = (evt) => {
-   this.setState((prevState) => ({
-    input: evt.target.value
-   }));
+    this.setState((prevState) => ({
+      input: evt.target.value
+    }));
   };
 
   componentDidMount() {
-   this.setState((prevState) => ({
-    input: testString
-   }));
+    this.setState((prevState) => ({
+      input: testString
+    }));
   }
 
   render() {
     return (
       <>
-        <MarkdownEditor input={this.state.input} onchange={this.handleEdit}/>
-        <HTMLPreview input={this.state.input}/>
+        <MarkdownEditor input={this.state.input} onchange={this.handleEdit} />
+        <HTMLPreview input={this.state.input} />
       </>
     );
   }
@@ -92,7 +94,13 @@ class HTMLPreview extends React.Component {
           <p className="flex-fill text-left mt-2 mb-2">Preview</p>
           <i className="fa fa-arrows-alt"></i>
         </Card.Header>
-        <Markdown className="preview">{this.props.input}</Markdown>
+        <Markdown
+          className="preview"
+          remarkPlugins={[remarkGfm]}
+          rehypePlugins={[rehypeRaw]}
+        >
+          {this.props.input}
+        </Markdown>
       </Card>
     );
   }
@@ -101,6 +109,6 @@ class HTMLPreview extends React.Component {
 const root = createRoot(document.getElementById("root"));
 root.render(
   <StrictMode>
-      <App />
+    <App />
   </StrictMode>
 );

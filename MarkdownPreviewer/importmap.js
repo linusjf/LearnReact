@@ -6,8 +6,8 @@ im.textContent = JSON.stringify({
     "react-dom/client": "https://esm.sh/react-dom/client?dev",
     "react-bootstrap": "https://esm.sh/react-bootstrap?dev",
     "react-markdown": "https://esm.sh/react-markdown@9?bundle",
-    "react-redux": "https://esm.sh/react-redux?dev",
-    "@reduxjs/toolkit": "https://esm.sh/@reduxjs/toolkit?dev"
+    "remark-gfm": "https://cdn.jsdelivr.net/npm/remark-gfm@4.0.0/+esm",
+    "rehype-raw": "https://cdn.jsdelivr.net/npm/rehype-raw@7.0.0/+esm"
   }
 });
 document.currentScript.after(im);
