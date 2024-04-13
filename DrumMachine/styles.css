@@ -19,7 +19,6 @@ main {
   background-color: #fff;
   border: 2px green solid;
   display: grid;
-  align-content: center;
 }
 
 .drum-box {
@@ -28,4 +27,5 @@ main {
   height: 50vh;
   width: 100%;
   background-color: #111;
+  margin: auto;
 }
