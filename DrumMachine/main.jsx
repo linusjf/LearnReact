@@ -1,6 +1,8 @@
 import React, { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { Form } from "react-bootstrap";
+import { Card } from "react-bootstrap";
+import drumsets from "./drummachine.js";
 
 class App extends React.Component {
   constructor(props) {
@@ -8,7 +10,8 @@ class App extends React.Component {
   }
 
   render() {
-    return <div />;
+    return;
+    <div className="drum-box"></div>;
   }
 }
 

@@ -2,7 +2,6 @@ const newAudio = (url) => {
   const audio = new Audio(url);
   audio.muted = false;
   audio.volume = 0.5;
-  audio.paused = true;
   audio.setAttribute("data-ready", false);
   audio.addEventListener("canplaythrough", (event) => {
     /* the audio is now playable;*/
