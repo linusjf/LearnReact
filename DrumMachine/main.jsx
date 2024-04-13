@@ -10,8 +10,8 @@ class App extends React.Component {
   }
 
   render() {
-    return;
-    <div className="drum-box"></div>;
+    return
+    <Card className="drum-box"></Card>;
   }
 }
 
