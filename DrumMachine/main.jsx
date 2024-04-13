@@ -10,8 +10,10 @@ class App extends React.Component {
   }
 
   render() {
-    return
-    <Card className="drum-box"></Card>;
+    return(
+    <Card as="div" id="drum-box" className="drum-box">
+      <p>Test</p></Card>
+    );
   }
 }
 

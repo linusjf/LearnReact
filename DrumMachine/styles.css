@@ -6,29 +6,26 @@
 }
 
 body {
-  color: white;
   background-color: #111;
   min-height: 100vh;
   width: 100%;
 }
 
 main {
+  min-height: 100vh;
+  max-height: 100vh;
+  height: 100vh;
+  width: 100%;
+  background-color: #fff;
+  border: 2px green solid;
   display: grid;
-  grid-row: 1;
-  grid-column: 1;
   align-content: center;
-  align-items: center;
-  justify-content: center;
-  justify-items: center;
 }
 
 .drum-box {
-  align-self: center;
-  justify-self: center;
   min-height: 50vh;
   max-height: 50vh;
   height: 50vh;
   width: 100%;
-  background-color: #fff;
-  border: 2px green solid;
+  background-color: #111;
 }
