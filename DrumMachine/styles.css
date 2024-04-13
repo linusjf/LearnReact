@@ -13,17 +13,22 @@ body {
 }
 
 main {
-  height: 100%;
-  width: 100%;
   display: grid;
+  grid-row: 1;
+  grid-column: 1;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
 }
 
 .drum-box {
-  min-height: 100vh;
-  max-height: 100vh;
-  height: 100vh;
+  align-self: center;
+  justify-self: center;
+  min-height: 50vh;
+  max-height: 50vh;
+  height: 50vh;
   width: 100%;
-  margin: auto;
   background-color: #fff;
   border: 2px green solid;
 }
