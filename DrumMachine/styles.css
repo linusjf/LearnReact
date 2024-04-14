@@ -17,8 +17,12 @@ main {
   height: 100vh;
   width: 100%;
   background-color: #fff;
-  border: 2px green solid;
+  border: 0.125rem green solid;
   display: grid;
+}
+
+audio {
+  display: none;
 }
 
 .drum-machine {
@@ -29,4 +33,23 @@ main {
   background-color: #111;
   margin: auto;
   border-radius: 0;
+  display: flex;
+}
+
+.drum-pads-container {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  gap: 2px;
+  grid-template-columns: repeat(3, 1fr);
+  align-content: center;
+  justify-content: center;
+}
+
+.drum-pad {
+  padding: 0.3125rem;
+  background-color: #888;
+  border: 2px solid red;
+  height: 5vh;
+  width: 100%;
 }
