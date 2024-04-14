@@ -40,16 +40,17 @@ audio {
   display: grid;
   height: 100%;
   width: 100%;
-  gap: 2px;
+  gap: 0.5rem;
   grid-template-columns: repeat(3, 1fr);
-  align-content: center;
-  justify-content: center;
+  place-content: center center;
 }
 
 .drum-pad {
   padding: 0.3125rem;
   background-color: #888;
-  border: 2px solid red;
+  border: 0.125rem solid red;
   height: 5vh;
   width: 100%;
+  display: grid;
+  place-items: center center;
 }

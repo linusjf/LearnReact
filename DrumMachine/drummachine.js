@@ -94,4 +94,6 @@ const drumsetnames = ["heater_kit", "smooth_piano_kit"];
 
 export default drumsets;
 
-export { drumsetnames };
+export {
+  drumsetnames
+};
