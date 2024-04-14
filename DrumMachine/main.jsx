@@ -44,6 +44,8 @@ class DrumMachine extends React.Component {
             </div>
           ))}
         </div>
+        <Card className="controls-container">
+          </Card>
       </Card>
     );
   }
