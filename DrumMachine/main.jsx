@@ -11,8 +11,20 @@ class App extends React.Component {
 
   render() {
     return(
-    <Card as="div" id="drum-box" className="drum-box">
-      <p>Test</p></Card>
+    <DrumMachine/>
+    );
+  }
+}
+
+class DrumMachine extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return(
+    <Card id="drum-machine" className="drum-machine">
+</Card>
     );
   }
 }

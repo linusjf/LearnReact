@@ -1,12 +1,13 @@
+class AudioElement {
+  constructor(url) {
+    this.url = url;
+    this.muted = false;
+    this.volume = 0.5;
+  }
+}
+
 const newAudio = (url) => {
-  const audio = new Audio(url);
-  audio.muted = false;
-  audio.volume = 0.5;
-  audio.setAttribute("data-ready", false);
-  audio.addEventListener("canplaythrough", (event) => {
-    /* the audio is now playable;*/
-    audio.setAttribute("data-ready", true);
-  });
+  const audio = new AudioElement(url);
   return audio;
 };
 

@@ -21,11 +21,12 @@ main {
   display: grid;
 }
 
-.drum-box {
+.drum-machine {
   min-height: 50vh;
   max-height: 50vh;
   height: 50vh;
   width: 90%;
   background-color: #111;
   margin: auto;
+  border-radius: 0;
 }
