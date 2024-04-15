@@ -29,6 +29,7 @@ class DrumMachine extends React.Component {
 
   async componentDidMount() {
     document.addEventListener("keydown", this.handleKeyDown);
+    console.log("keydown listener added");
   }
 
   async componentWillUnmount() {
@@ -37,7 +38,8 @@ class DrumMachine extends React.Component {
 
   handleKeyDown = (evt) => {
     const key = evt.key.toUpperCase();
-    if (isValidKey(key)) play(key);
+    console.log("key : " + key);
+    if (isValidKey(key)) this.play(key);
   };
 
   handleDrumsetToggle = () => {
@@ -82,8 +84,7 @@ class DrumMachine extends React.Component {
                 id={value.id}
                 volume={this.state.volume}
                 title={key}
-              ></audio>
-              <p>{value.id}</p>
+              ></audio>{value.id}
             </div>
           ))}
         </div>

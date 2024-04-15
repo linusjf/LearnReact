@@ -55,11 +55,9 @@ main {
   width: 100%;
   display: grid;
   place-items: center center;
-}
-
-.drum-pad > p {
   font-weight: bold;
   font-size: 1.2rem;
+  cursor: pointer;
 }
 
 .controls-container {
