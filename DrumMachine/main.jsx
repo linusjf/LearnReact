@@ -50,17 +50,20 @@ class DrumMachine extends React.Component {
   };
 
   handleDrumsetToggle = () => {
-    this.state.drumset == 0
-      ? this.setState(
-          state({
-            drumset: state.drumset + 1
-          })
-        )
-      : this.setState(
-          state({
-            drumset: state.drumset - 1
-          })
-        );
+    this.state.drumset === 0
+      ? this.setState((state) => ({
+          drumset: state.drumset + 1
+        }))
+      : this.setState((state) => ({
+          drumset: state.drumset - 1
+        }));
+  };
+
+  handlePowerButton = () => {
+    this.setState((state) => ({
+        power: !state.power
+      }
+    ))
   };
 
   handleVolumeChange = (evt) => {
@@ -95,6 +98,7 @@ class DrumMachine extends React.Component {
 
   render() {
     const currDrumSet = drumsets[drumsetnames[this.state.drumset]];
+    const btnClass = this.state.power ? "btn-danger" : "btn-secondary";
     return (
       <Card id="drum-machine" className="drum-machine">
         <div className="drum-pads-container">
@@ -105,7 +109,6 @@ class DrumMachine extends React.Component {
                 src={value.url}
                 controls={false}
                 preload="auto"
-                autoPlay={true}
                 muted={!this.state.power}
                 id={value.id}
                 volume={this.state.volume}
@@ -116,7 +119,8 @@ class DrumMachine extends React.Component {
           ))}
         </div>
         <Card className="controls-container">
-          <Button>
+          <div>
+          <Button onClick={this.handlePowerButton} className={btnClass}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -129,19 +133,18 @@ class DrumMachine extends React.Component {
               <path d="M3 8.812a5 5 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812" />
             </svg>
           </Button>
-          <div className="form-check form-switch">
-            <input
-              className="form-check-input"
-              type="checkbox"
-              role="switch"
+          <div>
+            <Form.Check
+              type="switch"
               id="switch-drumset"
-              checked={true}
+              checked={this.state.drumset === 0}
               onChange={this.handleDrumsetToggle}
+              label={drumsetnames[this.state.drumset]}
+              title={drumsetnames[this.state.drumset]}
+              reverse={this.state.drumset === 0}
             />
-            <Form.Label className="form-check-label" htmlFor="switch-drumset">
-              {drumsetnames[this.state.drumset]}
-            </Form.Label>
           </div>
+            </div>
           <Form.Label id="display">{this.state.drumpad}</Form.Label>
           <div>
             <Form.Label htmlFor="volume" className="form-label">

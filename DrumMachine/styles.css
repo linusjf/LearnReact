@@ -55,8 +55,8 @@ main {
   width: 100%;
   display: grid;
   place-items: center center;
-  font-weight: bold;
-  font-size: 1.2rem;
+  font-weight: bolder;
+  font-size: min(2rem, 1.5vh);
   cursor: pointer;
 }
 
