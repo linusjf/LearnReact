@@ -31,6 +31,9 @@ class DrumMachine extends React.Component {
     document.addEventListener("keydown", this.handleKeyDown);
     console.log("keydown listener added");
     this.setAudioVolume();
+    this.setState((state) => ({
+      drumpad: drumsetnames[this.state.drumset]
+    }));
   }
 
   async componentWillUnmount() {
@@ -61,9 +64,8 @@ class DrumMachine extends React.Component {
 
   handlePowerButton = () => {
     this.setState((state) => ({
-        power: !state.power
-      }
-    ))
+      power: !state.power
+    }));
   };
 
   handleVolumeChange = (evt) => {
@@ -89,10 +91,12 @@ class DrumMachine extends React.Component {
   play = (id) => {
     setTimeout(() => {
       const audio = document.getElementById(id);
-      this.setState((state) => ({
-        drumpad: audio.title
-      }));
-      audio.play();
+      if (this.state.power) {
+        this.setState((state) => ({
+          drumpad: audio.title
+        }));
+        audio.play();
+      }
     }, 100);
   };
 
@@ -119,54 +123,45 @@ class DrumMachine extends React.Component {
           ))}
         </div>
         <Card className="controls-container">
-          <div>
-          <Button onClick={this.handlePowerButton} className={btnClass}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              className="bi bi-power"
-              viewBox="0 0 16 16"
-            >
-              <path d="M7.5 1v7h1V1z" />
-              <path d="M3 8.812a5 5 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812" />
-            </svg>
-          </Button>
-          <div>
-            <Form.Check
-              type="switch"
-              id="switch-drumset"
-              checked={this.state.drumset === 0}
-              onChange={this.handleDrumsetToggle}
-              label={drumsetnames[this.state.drumset]}
-              title={drumsetnames[this.state.drumset]}
-              reverse={this.state.drumset === 0}
-            />
-          </div>
+          <div className="btn-switch-container">
+            <Button onClick={this.handlePowerButton} className={btnClass}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                className="bi bi-power flex-fill"
+                viewBox="0 0 16 16"
+              >
+                <path d="M7.5 1v7h1V1z" />
+                <path d="M3 8.812a5 5 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812" />
+              </svg>
+            </Button>
+            <div>
+              <Form.Check
+                type="switch"
+                id="switch-drumset"
+                checked={this.state.drumset === 0}
+                onChange={this.handleDrumsetToggle}
+                label={drumsetnames[this.state.drumset]}
+                title={drumsetnames[this.state.drumset]}
+                reverse={true}
+              />
             </div>
+          </div>
           <Form.Label id="display">{this.state.drumpad}</Form.Label>
           <div>
             <Form.Label htmlFor="volume" className="form-label">
-              {"Volume: " + this.state.volume}
+              {"Volume: " + Math.ceil(this.state.volume * 100)}
             </Form.Label>
             <Form.Range
               className="form-range"
               min="0"
               max="1"
               step="0.01"
-              orient="vertical"
               id="volume"
-              list="markers"
               onChange={this.handleVolumeChange}
             />
-            <datalist id="markers">
-              <option value="0"></option>
-              <option value="0.25"></option>
-              <option value="0.50"></option>
-              <option value="0.75"></option>
-              <option value="1.0"></option>
-            </datalist>
           </div>
         </Card>
       </Card>
