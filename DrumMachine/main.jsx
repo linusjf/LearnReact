@@ -127,8 +127,8 @@ class DrumMachine extends React.Component {
             <Button onClick={this.handlePowerButton} className={btnClass}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
+                width="10"
+                height="10"
                 fill="currentColor"
                 className="bi bi-power flex-fill"
                 viewBox="0 0 16 16"
@@ -137,8 +137,12 @@ class DrumMachine extends React.Component {
                 <path d="M3 8.812a5 5 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812" />
               </svg>
             </Button>
+            <Form.Label className="mt-2" id="display">
+              {this.state.drumpad}
+            </Form.Label>
             <div>
               <Form.Check
+                className="mx-1"
                 type="switch"
                 id="switch-drumset"
                 checked={this.state.drumset === 0}
@@ -149,9 +153,8 @@ class DrumMachine extends React.Component {
               />
             </div>
           </div>
-          <Form.Label id="display">{this.state.drumpad}</Form.Label>
-          <div>
-            <Form.Label htmlFor="volume" className="form-label">
+          <div className="d-flex flex-column-reverse">
+            <Form.Label htmlFor="volume" className="mx-auto">
               {"Volume: " + Math.ceil(this.state.volume * 100)}
             </Form.Label>
             <Form.Range

@@ -63,6 +63,7 @@ main {
 .controls-container {
   height: 25vh;
   width: 100%;
+  justify-items: center;
 }
 
 .btn-switch-container {
