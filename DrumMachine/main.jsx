@@ -4,7 +4,7 @@ import { Form } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { Card } from "react-bootstrap";
 import AudioPlayer from "react-h5-audio-player";
-import drumsets, { drumsetnames } from "./drummachine.js";
+import drumsets, { drumsetnames, isValidKey } from "./drummachine.js";
 
 class App extends React.Component {
   constructor(props) {
@@ -26,6 +26,19 @@ class DrumMachine extends React.Component {
       drumpad: ""
     };
   }
+
+  async componentDidMount() {
+    document.addEventListener("keydown", this.handleKeyDown);
+  }
+
+  async componentWillUnmount() {
+    document.removeEventListener("keydown", this.handleKeyDown);
+  }
+
+  handleKeyDown = (evt) => {
+    const key = evt.key.toUpperCase();
+    if (isValidKey(key)) play(key);
+  };
 
   handleDrumsetToggle = () => {
     this.state.drumset == 0

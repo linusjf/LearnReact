@@ -92,8 +92,15 @@ const drumsets = {
 
 const drumsetnames = ["heater_kit", "smooth_piano_kit"];
 
+const keys = ["Q", "W", "E", "A", "S", "D", "Z", "X", "C"];
+
+function isValidKey(key) {
+  return keys.includes(key);
+}
+
 export default drumsets;
 
 export {
-  drumsetnames
+  drumsetnames,
+  isValidKey
 };
