@@ -30,10 +30,17 @@ class DrumMachine extends React.Component {
   async componentDidMount() {
     document.addEventListener("keydown", this.handleKeyDown);
     console.log("keydown listener added");
+    this.setAudioVolume();
   }
 
   async componentWillUnmount() {
     document.removeEventListener("keydown", this.handleKeyDown);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.volume !== this.state.volume) {
+      this.setAudioVolume();
+    }
   }
 
   handleKeyDown = (evt) => {
@@ -56,6 +63,21 @@ class DrumMachine extends React.Component {
         );
   };
 
+  handleVolumeChange = (evt) => {
+    const source = event.target || event.srcElement;
+    this.setState((state) => ({
+      volume: source.value
+    }));
+  };
+
+  setAudioVolume = () => {
+    const collection = document.getElementsByTagName("audio");
+    const volume = this.state.volume;
+    Array.from(collection).forEach((element) => {
+      element.volume = volume;
+    });
+  };
+
   handleDrumPad = (evt) => {
     const source = event.target || event.srcElement;
     this.play(source.firstElementChild.getAttribute("id"));
@@ -64,6 +86,9 @@ class DrumMachine extends React.Component {
   play = (id) => {
     setTimeout(() => {
       const audio = document.getElementById(id);
+      this.setState((state) => ({
+        drumpad: audio.title
+      }));
       audio.play();
     }, 100);
   };
@@ -81,10 +106,12 @@ class DrumMachine extends React.Component {
                 controls={false}
                 preload="auto"
                 autoPlay={true}
+                muted={!this.state.power}
                 id={value.id}
                 volume={this.state.volume}
                 title={key}
-              ></audio>{value.id}
+              ></audio>
+              {value.id}
             </div>
           ))}
         </div>
@@ -125,8 +152,18 @@ class DrumMachine extends React.Component {
               min="0"
               max="1"
               step="0.01"
+              orient="vertical"
               id="volume"
+              list="markers"
+              onChange={this.handleVolumeChange}
             />
+            <datalist id="markers">
+              <option value="0"></option>
+              <option value="0.25"></option>
+              <option value="0.50"></option>
+              <option value="0.75"></option>
+              <option value="1.0"></option>
+            </datalist>
           </div>
         </Card>
       </Card>
