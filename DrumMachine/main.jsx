@@ -41,14 +41,26 @@ class DrumMachine extends React.Component {
         );
   };
 
+  handleDrumPad = (evt) => {
+    const source = event.target || event.srcElement;
+    const id = source.firstChild.id;
+    this.play(id);
+  };
+
+  play = (id) => {
+    const audio = document.getElementById(id);
+    audio.play();
+  };
+
   render() {
     const currDrumSet = drumsets[drumsetnames[this.state.drumset]];
     return (
       <Card id="drum-machine" className="drum-machine">
         <div className="drum-pads-container">
           {Object.entries(currDrumSet).map(([key, value]) => (
-            <div key={key} className="drum-pad">
+            <div key={key} className="drum-pad" onClick={this.handleDrumPad}>
               <audio
+                className="clip"
                 src={value.url}
                 controls={false}
                 id={value.id}
@@ -86,7 +98,7 @@ class DrumMachine extends React.Component {
               {drumsetnames[this.state.drumset]}
             </Form.Label>
           </div>
-          <Form.Label>{this.state.drumpad}</Form.Label>
+          <Form.Label id="display">{this.state.drumpad}</Form.Label>
           <div>
             <Form.Label htmlFor="volume" className="form-label">
               {"Volume: " + this.state.volume}

@@ -21,7 +21,7 @@ main {
   display: grid;
 }
 
-audio {
+.clip {
   display: none;
 }
 
