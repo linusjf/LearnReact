@@ -43,13 +43,14 @@ class DrumMachine extends React.Component {
 
   handleDrumPad = (evt) => {
     const source = event.target || event.srcElement;
-    const id = source.firstChild.id;
-    this.play(id);
+    this.play(source.firstElementChild.getAttribute("id"));
   };
 
   play = (id) => {
-    const audio = document.getElementById(id);
-    audio.play();
+    setTimeout(() => {
+      const audio = document.getElementById(id);
+      audio.play();
+    }, 100);
   };
 
   render() {
@@ -63,6 +64,8 @@ class DrumMachine extends React.Component {
                 className="clip"
                 src={value.url}
                 controls={false}
+                preload="auto"
+                autoPlay={true}
                 id={value.id}
                 volume={this.state.volume}
                 title={key}
