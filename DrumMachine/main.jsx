@@ -102,13 +102,14 @@ class DrumMachine extends React.Component {
   render() {
     const currDrumSet = drumsets[drumsetnames[this.state.drumset]];
     const btnClass = this.state.power ? "btn-danger" : "btn-secondary";
+    const drumpadClass = this.state.power ? "drum-pad": "drum-pad drum-pad-inactive";
     return (
       <Card id="drum-machine" className="drum-machine">
         <div className="drum-pads-container">
           {Object.entries(currDrumSet).map(([key, value]) => (
             <div
               key={key}
-              className="drum-pad"
+              className={drumpadClass}
               onClick={this.handleDrumPad}
               id={key}
             >
