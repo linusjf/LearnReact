@@ -5,7 +5,8 @@ im.textContent = JSON.stringify({
     react: "https://esm.sh/react?dev",
     "react-dom/client": "https://esm.sh/react-dom/client?dev",
     "react-bootstrap": "https://esm.sh/react-bootstrap?dev",
-    drummachine: "./drummachine.js"
+    drummachine:
+      "https://raw.githubusercontent.com/linusjf/LearnReact/main/DrumMachine/drummachine.mjs"
   }
 });
 document.currentScript.after(im);
