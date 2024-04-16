@@ -128,7 +128,7 @@ class DrumMachine extends React.Component {
         </div>
         <Card className="controls-container">
           <div className="btn-switch-container">
-            <Form.Label className="mt-2" id="display">
+            <Form.Label className="mt-2 mx-1" id="display">
               {this.state.drumpad}
             </Form.Label>
             <div>
@@ -149,7 +149,7 @@ class DrumMachine extends React.Component {
               {"Volume: " + Math.ceil(this.state.volume * 100)}
             </Form.Label>
             <Form.Range
-              className="form-range"
+              className="form-range mx-auto"
               min="0"
               max="1"
               step="0.01"
@@ -157,13 +157,13 @@ class DrumMachine extends React.Component {
               onChange={this.handleVolumeChange}
             />
           </div>
-          <Button onClick={this.handlePowerButton} className={btnClass}>
+          <Button onClick={this.handlePowerButton} className={btnClass + " mx-auto"}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="10"
               height="10"
               fill="currentColor"
-              className="bi bi-power flex-fill"
+              className="bi bi-power"
               viewBox="0 0 16 16"
             >
               <path d="M7.5 1v7h1V1z" />
