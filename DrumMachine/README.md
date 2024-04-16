@@ -52,4 +52,4 @@ You can build your project by using [this CodePen template](https://codepen.io/p
 
 Once you're done, submit the URL to your working project with all its tests passing.
 
-Solution Link: <https://codepen.io/Linus-J-Fernandes/pen/WNWyYaq>
+Solution Link: <https://linusjf.github.io/DrumMachine/index.html>
