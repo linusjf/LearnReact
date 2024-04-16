@@ -3,7 +3,6 @@ import { createRoot } from "react-dom/client";
 import { Form } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { Card } from "react-bootstrap";
-import AudioPlayer from "react-h5-audio-player";
 import drumsets, { drumsetnames, isValidKey } from "./drummachine.js";
 
 class App extends React.Component {
@@ -89,15 +88,13 @@ class DrumMachine extends React.Component {
   };
 
   play = (id) => {
-    setTimeout(() => {
-      const audio = document.getElementById(id);
-      if (this.state.power) {
-        this.setState((state) => ({
-          drumpad: audio.title
-        }));
-        audio.play();
-      }
-    }, 100);
+    const audio = document.getElementById(id);
+    if (this.state.power) {
+      this.setState((state) => ({
+        drumpad: audio.title
+      }));
+      audio.play();
+    }
   };
 
   render() {
@@ -107,7 +104,12 @@ class DrumMachine extends React.Component {
       <Card id="drum-machine" className="drum-machine">
         <div className="drum-pads-container">
           {Object.entries(currDrumSet).map(([key, value]) => (
-            <div key={key} className="drum-pad" onClick={this.handleDrumPad}>
+            <div
+              key={key}
+              className="drum-pad"
+              onClick={this.handleDrumPad}
+              id={key}
+            >
               <audio
                 className="clip"
                 src={value.url}

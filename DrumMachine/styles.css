@@ -64,6 +64,10 @@ main {
   height: 25vh;
   width: 100%;
   justify-items: center;
+  background-color: black;
+  border-radius: 0;
+  color: white;
+  border: 0.125rem dashed green;
 }
 
 .btn-switch-container {
