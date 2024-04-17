@@ -71,7 +71,7 @@ if ! test -z "$files"; then
       html-validate --formatter stylish %
   SUCCESS=$((SUCCESS + $?))
 fi
-files=$(find . -type f -name "*.js" \
+files=$(find . -type f -name "*.js" -name "*.mjs" \
   ! -path "**/.git/**" ! -path "**/node_modules/**" ! -path "**/*tailwind.css")
 if ! test -z "$files"; then
   echo -e "${GREEN}Executing js-beautify for js...${ENDCOLOR}"
