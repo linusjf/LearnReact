@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import Markdown from "react-markdown";
 import { Card } from "react-bootstrap";
 import { Form } from "react-bootstrap";
-import testString from "./markdown.js";
+import testString from "markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import remarkBreaks from "remark-breaks";

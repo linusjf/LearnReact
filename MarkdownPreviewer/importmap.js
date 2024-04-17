@@ -8,7 +8,8 @@ im.textContent = JSON.stringify({
     "react-markdown": "https://esm.sh/react-markdown@9?bundle",
     "remark-gfm": "https://cdn.jsdelivr.net/npm/remark-gfm@4.0.0/+esm",
     "rehype-raw": "https://cdn.jsdelivr.net/npm/rehype-raw@7.0.0/+esm",
-    "remark-breaks": "https://esm.sh/remark-breaks@4?bundle"
+    "remark-breaks": "https://esm.sh/remark-breaks@4?bundle",
+    markdown: "/markdown.mjs"
   }
 });
 document.currentScript.after(im);

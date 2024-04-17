@@ -102,7 +102,9 @@ class DrumMachine extends React.Component {
   render() {
     const currDrumSet = drumsets[drumsetnames[this.state.drumset]];
     const btnClass = this.state.power ? "btn-danger" : "btn-secondary";
-    const drumpadClass = this.state.power ? "drum-pad": "drum-pad drum-pad-inactive";
+    const drumpadClass = this.state.power
+      ? "drum-pad"
+      : "drum-pad drum-pad-inactive";
     return (
       <Card id="drum-machine" className="drum-machine">
         <div className="drum-pads-container">
@@ -158,7 +160,10 @@ class DrumMachine extends React.Component {
               onChange={this.handleVolumeChange}
             />
           </div>
-          <Button onClick={this.handlePowerButton} className={btnClass + " mx-auto"}>
+          <Button
+            onClick={this.handlePowerButton}
+            className={btnClass + " mx-auto"}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="10"
