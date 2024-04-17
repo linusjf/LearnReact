@@ -42,4 +42,7 @@
 - Number 9: `<i class="fa-solid fa-9"></i>`
 - Number 0: `<i class="fa-solid fa-0"></i>`
 
-No period icon available in Fontawesome Icons as yet.
+No period icon available in Fontawesome Icons Free as yet.
+It is available in Font Awesome Pro.
+
+- Period: `<i class="fa-solid fa-period"></i>`
