@@ -25,3 +25,19 @@
 3. Fontawesome icons:
 
 - Equals To: <i class="fa-solid fa-equals"></i>
+- Plus: <i class="fa-solid fa-plus"></i>
+- Minus: <i class="fa-solid fa-minus"></i>
+- Slash: <i class="fa-solid fa-slash"></i>
+- Multiplication: <i class="fa-solid fa-xmark"></i>
+- Number 1: <i class="fa-solid fa-1"></i>
+- Number 2: <i class="fa-solid fa-2"></i>
+- Number 3: <i class="fa-solid fa-3"></i>
+- Number 4: <i class="fa-solid fa-4"></i>
+- Number 5: <i class="fa-solid fa-5"></i>
+- Number 6: <i class="fa-solid fa-6"></i>
+- Number 7: <i class="fa-solid fa-7"></i>
+- Number 8: <i class="fa-solid fa-8"></i>
+- Number 9: <i class="fa-solid fa-9"></i>
+- Number 0: <i class="fa-solid fa-0"></i>
+
+No period icon available in Fontawesome Icons as yet.
