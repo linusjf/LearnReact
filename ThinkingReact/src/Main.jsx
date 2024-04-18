@@ -1,5 +1,5 @@
-import React, { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
+import React from "react";
+import "./styles.css";
 
 function ProductCategoryRow({ category }) {
   return (
@@ -93,13 +93,8 @@ const PRODUCTS = [
   { category: "Vegetables", price: "$1", stocked: true, name: "Peas" }
 ];
 
-let App = function App() {
+let Main = function Main() {
   return <FilterableProductTable products={PRODUCTS} />;
 };
 
-const root = createRoot(document.getElementById("root"));
-root.render(
-  <StrictMode>
-    <App />
-  </StrictMode>
-);
+export default Main;
