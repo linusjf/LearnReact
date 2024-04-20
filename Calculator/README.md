@@ -8,23 +8,23 @@ Fulfill the below user stories and get all of the tests to pass. Use whichever l
 
 You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and jQuery to complete this project. You should use a frontend framework (like React for example) because this section is about learning frontend frameworks. Additional technologies not listed above are not recommended and using them is at your own risk. We are looking at supporting other frontend frameworks like Angular and Vue, but they are not currently supported. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!
 
-01. User Story #1: My calculator should contain a clickable element containing an = (equal sign) with a corresponding id="equals".
+1.  User Story #1: My calculator should contain a clickable element containing an = (equal sign) with a corresponding id="equals".
 
-02. User Story #2: My calculator should contain 10 clickable elements containing one number each from 0-9, with the following corresponding IDs: id="zero", id="one", id="two", id="three", id="four", id="five", id="six", id="seven", id="eight", and id="nine".
+2.  User Story #2: My calculator should contain 10 clickable elements containing one number each from 0-9, with the following corresponding IDs: id="zero", id="one", id="two", id="three", id="four", id="five", id="six", id="seven", id="eight", and id="nine".
 
-03. User Story #3: My calculator should contain 4 clickable elements each containing one of the 4 primary mathematical operators with the following corresponding IDs: id="add", id="subtract", id="multiply", id="divide".
+3.  User Story #3: My calculator should contain 4 clickable elements each containing one of the 4 primary mathematical operators with the following corresponding IDs: id="add", id="subtract", id="multiply", id="divide".
 
-04. User Story #4: My calculator should contain a clickable element containing a . (decimal point) symbol with a corresponding id="decimal".
+4.  User Story #4: My calculator should contain a clickable element containing a . (decimal point) symbol with a corresponding id="decimal".
 
-05. User Story #5: My calculator should contain a clickable element with an id="clear".
+5.  User Story #5: My calculator should contain a clickable element with an id="clear".
 
-06. User Story #6: My calculator should contain an element to display values with a corresponding id="display".
+6.  User Story #6: My calculator should contain an element to display values with a corresponding id="display".
 
-07. User Story #7: At any time, pressing the clear button clears the input and output values, and returns the calculator to its initialized state; 0 should be shown in the element with the id of display.
+7.  User Story #7: At any time, pressing the clear button clears the input and output values, and returns the calculator to its initialized state; 0 should be shown in the element with the id of display.
 
-08. User Story #8: As I input numbers, I should be able to see my input in the element with the id of display.
+8.  User Story #8: As I input numbers, I should be able to see my input in the element with the id of display.
 
-09. User Story #9: In any order, I should be able to add, subtract, multiply and divide a chain of numbers of any length, and when I hit =, the correct result should be shown in the element with the id of display.
+9.  User Story #9: In any order, I should be able to add, subtract, multiply and divide a chain of numbers of any length, and when I hit =, the correct result should be shown in the element with the id of display.
 
 10. User Story #10: When inputting numbers, my calculator should not allow a number to begin with multiple zeros.
 
@@ -44,7 +44,7 @@ EXAMPLE: 3 + 5 x 6 - 2 / 4 =
 
 Immediate Execution Logic: 11.5
 Formula/Expression Logic: 32.5
-You can build your project by using this CodePen template and clicking Save to create your own pen. Or you can use this CDN link to run the tests in any environment you like: <https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js>
+You can build your project by using this [CodePen template](https://codepen.io/pen?template=MJjpwO) and clicking Save to create your own pen. Or you can use this CDN link to run the tests in any environment you like: <https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js>
 
 Once you're done, submit the URL to your working project with all its tests passing.
 
