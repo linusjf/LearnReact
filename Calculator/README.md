@@ -20,7 +20,7 @@ You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and
 
 6.  User Story #6: My calculator should contain an element to display values with a corresponding `id="display"`.
 
-7.  User Story #7: At any time, pressing the clear button clears the input and output values, and returns the calculator to its initialized state; 0 should be shown in the element with the id of display.
+7.  User Story #7: At any time, pressing the clear button clears the input and output values, and returns the calculator to its initialized state; `0` should be shown in the element with the id of display.
 
 8.  User Story #8: As I input numbers, I should be able to see my input in the element with the id of display.
 
