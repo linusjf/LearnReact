@@ -6,7 +6,7 @@
 
 Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
 
-You can use any mix of **HTML**, **JavaScript**, **CSS**, **Bootstrap**, **SASS**, **React**, **Redux**, and **jQuery** to complete this project. You should use a frontend framework (like React for example) because this section is about learning frontend frameworks. Additional technologies not listed above are not recommended and using them is at your own risk. We are looking at supporting other frontend frameworks like Angular and Vue, but they are not currently supported. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!
+You can use any mix of **_HTML_**, **_JavaScript_**, **_CSS_**, **_Bootstrap_**, **_SASS_**, **_React_**, **_Redux_**, and **_jQuery_** to complete this project. You should use a frontend framework (like **_React_** for example) because this section is about learning frontend frameworks. Additional technologies not listed above are not recommended and using them is at your own risk. We are looking at supporting other frontend frameworks like **_Angular_** and **_Vue_**, but they are not currently supported. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!
 
 1.  User Story #1: My calculator should contain a clickable element containing an `=` (equal sign) with a corresponding `id="equals`".
 
