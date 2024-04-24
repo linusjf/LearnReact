@@ -27,13 +27,13 @@ class MarkdownPreviewer extends React.Component {
   }
 
   handleEdit = (evt) => {
-    this.setState((prevState) => ({
+    this.setState(() => ({
       input: evt.target.value
     }));
   };
 
   componentDidMount() {
-    this.setState((prevState) => ({
+    this.setState(() => ({
       input: testString
     }));
   }

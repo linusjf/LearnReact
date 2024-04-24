@@ -1,4 +1,4 @@
-const ShoppingCart = (props) => {
+const ShoppingCart = () => {
   return (
     <div>
       <h1>Shopping Cart Component</h1>

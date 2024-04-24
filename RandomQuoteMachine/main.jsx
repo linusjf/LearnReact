@@ -80,7 +80,7 @@ class RandomQuote extends React.Component {
 
   stripGettyCodes(content) {
     const re =
-      /http:[\/][\/]www[.]gettyimages[.]com[\/]detail[\/][0-9A-Za-z\-]+/g;
+      /http:[/][/]www[.]gettyimages[.]com[/]detail[/][0-9A-Za-z-]+/g;
     content = content.replaceAll(re, "");
     content = content.replaceAll("Embed from Getty Images", "");
     return content;

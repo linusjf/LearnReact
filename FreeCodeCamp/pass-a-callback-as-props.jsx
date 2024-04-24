@@ -53,3 +53,5 @@ class RenderInput extends React.Component {
     );
   }
 }
+
+export default MyApp;

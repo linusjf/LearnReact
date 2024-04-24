@@ -2,7 +2,7 @@ class OnlyEvens extends React.Component {
   constructor(props) {
     super(props);
   }
-  shouldComponentUpdate(nextProps, nextState) {
+  shouldComponentUpdate(nextProps) {
     console.log("Should I update?");
     return nextProps.value % 2 === 0;
   }

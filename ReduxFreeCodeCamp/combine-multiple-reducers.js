@@ -41,3 +41,5 @@ const rootReducer = Redux.combineReducers({
 });
 
 const store = Redux.createStore(rootReducer);
+
+export { store };

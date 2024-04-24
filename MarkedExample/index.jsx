@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+/* eslint-disable no-unused-vars */
 
 const markdown = `A paragraph with *emphasis* and **strong importance**.
 

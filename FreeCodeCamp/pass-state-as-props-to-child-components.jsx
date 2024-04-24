@@ -30,3 +30,5 @@ class Navbar extends React.Component {
     );
   }
 }
+
+export default MyApp;
