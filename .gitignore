@@ -138,3 +138,5 @@ tidy.out
 # linter output files
 *.out
 *.wsout
+
+**/docs/**
