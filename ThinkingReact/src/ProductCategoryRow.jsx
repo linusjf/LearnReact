@@ -1,3 +1,8 @@
+/**
+ *
+ * @param root0
+ * @param root0.category
+ */
 function ProductCategoryRow({ category }) {
   return (
     <tr>

@@ -6,6 +6,9 @@ import { useState } from "react";
 let App = function MyApp() {
   const [count, setCount] = useState(0);
 
+  /**
+   *
+   */
   function handleClick() {
     setCount(count + 1);
   }
@@ -24,6 +27,12 @@ let App = function MyApp() {
   );
 };
 
+/**
+ *
+ * @param root0
+ * @param root0.count
+ * @param root0.onClick
+ */
 function MyButton({ count, onClick }) {
   return <button onClick={onClick}>Clicked {count} times</button>;
 }

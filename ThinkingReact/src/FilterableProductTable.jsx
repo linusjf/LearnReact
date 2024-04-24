@@ -2,6 +2,11 @@ import { useState } from "react";
 import ProductTable from "./ProductTable";
 import SearchBar from "./SearchBar";
 
+/**
+ *
+ * @param root0
+ * @param root0.products
+ */
 function FilterableProductTable({ products }) {
   const [filterText, setFilterText] = useState("");
   const [inStockOnly, setInStockOnly] = useState(false);

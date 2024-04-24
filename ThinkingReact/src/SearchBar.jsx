@@ -1,3 +1,11 @@
+/**
+ *
+ * @param root0
+ * @param root0.filterText
+ * @param root0.inStockOnly
+ * @param root0.onFilterTextChange
+ * @param root0.onInStockOnlyChange
+ */
 function SearchBar({
   filterText,
   inStockOnly,

@@ -7,6 +7,9 @@ const frontEndFrameworks = [
   "Vue"
 ];
 
+/**
+ *
+ */
 function Frameworks() {
   const frameworks = (fm) => {
     return <li key={fm}>{fm}</li>;

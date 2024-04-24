@@ -94,6 +94,10 @@ const drumsetnames = ["heater_kit", "smooth_piano_kit"];
 
 const keys = ["Q", "W", "E", "A", "S", "D", "Z", "X", "C"];
 
+/**
+ *
+ * @param key
+ */
 function isValidKey(key) {
   return keys.includes(key);
 }

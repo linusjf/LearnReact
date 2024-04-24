@@ -9,6 +9,10 @@
 ######################################################################
 # shellcheck disable=SC2317
 # Don't warn about unreachable commands in this function
+RED="\e[31m"
+GREEN="\e[32m"
+ENDCOLOR="\e[0m"
+
 handle_error() {
   # Get information about the error
   local error_code=$?
@@ -19,6 +23,9 @@ handle_error() {
   exit "$error_code"
 }
 
+info() {
+  echo -e "${GREEN}${1}${ENDCOLOR}"
+}
 # shellcheck disable=SC2317
 # Don't warn about unreachable commands in this function
 ctrl_c() {

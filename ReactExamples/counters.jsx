@@ -18,9 +18,15 @@ let App = function MyApp() {
   );
 };
 
+/**
+ *
+ */
 function MyButton() {
   const [count, setCount] = useState(0);
 
+  /**
+   *
+   */
   function handleClick() {
     setCount(count + 1);
   }

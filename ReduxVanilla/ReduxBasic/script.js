@@ -1,5 +1,10 @@
 import * as Redux from "https://unpkg.com/redux@latest/dist/redux.browser.mjs";
 
+/**
+ *
+ * @param state
+ * @param action
+ */
 function counter(
   state = {
     counter: 0,
@@ -31,6 +36,9 @@ var store = Redux.createStore(counter);
 var valueEl = document.getElementById("value");
 var clicksEl = document.getElementById("clicks");
 
+/**
+ *
+ */
 function render() {
   const val = store.getState().counter;
   valueEl.innerHTML = val.toString();

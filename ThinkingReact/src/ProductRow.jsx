@@ -1,3 +1,8 @@
+/**
+ *
+ * @param root0
+ * @param root0.product
+ */
 function ProductRow({ product }) {
   const name = product.stocked ? (
     product.name
