@@ -93,3 +93,5 @@ class AppWrapper extends React.Component {
     );
   }
 }
+
+export default AppWrapper;

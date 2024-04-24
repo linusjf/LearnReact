@@ -41,7 +41,7 @@ class Presentational extends React.Component {
   submitMessage() {
     if (this.state.input) {
       this.props.submitNewMessage(this.state.input);
-      this.setState((state) => ({
+      this.setState(() => ({
         input: ""
       }));
     }
@@ -87,3 +87,5 @@ class AppWrapper extends React.Component {
     );
   }
 }
+
+export default AppWrapper;

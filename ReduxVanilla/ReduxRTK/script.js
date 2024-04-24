@@ -6,15 +6,13 @@ const clickActionsSlice = RTK.createSlice({
   name: "action",
   initialState: 0,
   reducers: {
-    clickAction: (state, action) => {
+    clickAction: (state) => {
       return state + 1;
     }
   }
 });
 
-const {
-  clickAction
-} = clickActionsSlice.actions;
+const { clickAction } = clickActionsSlice.actions;
 
 // Redux Store
 

@@ -8,7 +8,6 @@
  */
 function SearchBar({
   filterText,
-  inStockOnly,
   onFilterTextChange,
   onInStockOnlyChange
 }) {
@@ -18,7 +17,7 @@ function SearchBar({
         type="text"
         value={filterText}
         placeholder="Search..."
-        onChange={(e) => onFilterTextChange(e.target.value)}
+          onChange={(e) => onFilterTextChange(e.target.value)}
       />
       <label>
         <input

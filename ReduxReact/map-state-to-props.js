@@ -5,4 +5,6 @@ const mapStateToProps = (state) => {
   return {
     messages: state
   };
-}
+};
+
+export { state, mapStateToProps };

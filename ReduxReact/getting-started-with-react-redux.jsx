@@ -13,3 +13,5 @@ class DisplayMessages extends React.Component {
     return <div />;
   }
 }
+
+export default DisplayMessages;

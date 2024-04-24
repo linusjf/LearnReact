@@ -6,7 +6,7 @@ const addMessage = (msg) => {
     type: ADD,
     message: msg
   };
-}
+};
 
 const messageReducer = (state = [], action) => {
   switch (action.type) {
@@ -16,6 +16,6 @@ const messageReducer = (state = [], action) => {
     default:
       return state;
   }
-}
+};
 
 const store = Redux.createStore(messageReducer);

@@ -1,16 +1,17 @@
 const addMessage = (message) => {
   return {
-    type: 'ADD',
+    type: "ADD",
     message: message
-  }
+  };
 };
 
 // Change code below this line
 const mapDispatchToProps = (dispatch) => {
   return {
-    submitNewMessage: function(msg) {
+    submitNewMessage: function (msg) {
       dispatch(addMessage(msg));
     }
   };
+};
 
-}
+export { addMessage, mapDispatchToProps };

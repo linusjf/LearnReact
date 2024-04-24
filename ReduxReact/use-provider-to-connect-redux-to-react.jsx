@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // Redux:
 const ADD = "ADD";
 
@@ -75,3 +76,5 @@ class AppWrapper extends React.Component {
   }
   // Change code above this line
 }
+
+export default AppWrapper;
