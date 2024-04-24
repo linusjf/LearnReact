@@ -1,0 +1,25 @@
+{
+  "opts": {
+    "destination": "docs",
+    "readme": "README.md",
+    "recurse": true
+  },
+  "plugins": [
+    "plugins/markdown"
+  ],
+  "source": {
+    "excludePattern": "(^|\\/|\\\\)_",
+    "include": [
+      "src"
+    ],
+    "includePattern": ".+\\.js(doc|x)?$"
+  },
+  "tags": {
+    "allowUnknownTags": true,
+    "dictionaries": [
+      "jsdoc",
+      "closure"
+    ]
+  },
+  "templates": {}
+}

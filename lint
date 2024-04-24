@@ -14,8 +14,8 @@ process_yaml() {
     -o -type f -name "*.yaml" -print)
   if test -n "$files"; then
     info "Executing prettier for yaml..."
-    echo "$files" |
-      parallel -X --bar -j "$PROCS" -I% \
+    echo "$files" \
+      | parallel -X --bar -j "$PROCS" -I% \
         prettier --log-level silent --cache --parser yaml --write %
     return $?
   fi
@@ -27,8 +27,8 @@ process_json() {
     -o -type f -name "*.json" -print)
   if test -n "$files"; then
     info "Executing prettier for json..."
-    echo "$files" |
-      parallel -X --bar -j "$PROCS" -I% \
+    echo "$files" \
+      | parallel -X --bar -j "$PROCS" -I% \
         prettier --log-level silent --cache --parser json --write %
     return $?
   fi
@@ -41,13 +41,13 @@ process_stylesheets() {
     -o -type f \( -name "*.css" -a ! -name "*.scss.css" -a ! -name "*.sass.css" \) -print)
   if test -n "$files"; then
     info "Executing colorguard..."
-    echo "$files" |
-      parallel -X --bar -j "$PROCS" -I% \
+    echo "$files" \
+      | parallel -X --bar -j "$PROCS" -I% \
         colorguard --file % --allow-equivalent-notation
     retcode=$((retcode + $?))
     info "Executing prettier for css..."
-    echo "$files" |
-      parallel -X --bar -j "$PROCS" -I% \
+    echo "$files" \
+      | parallel -X --bar -j "$PROCS" -I% \
         prettier --log-level silent --cache --parser css --write %
     retcode=$((retcode + $?))
   fi
@@ -55,8 +55,8 @@ process_stylesheets() {
     -o -type f \( -name "*.css" -a ! -name "*.scss.css" -a ! -name "*.sass.css" -a ! -name "tw-*.css" \) -print)
   if test -n "$files"; then
     info "Executing stylelint for css..."
-    echo "$files" |
-      parallel -X --bar -j "$PROCS" -I% \
+    echo "$files" \
+      | parallel -X --bar -j "$PROCS" -I% \
         stylelint % --color --fix --quiet-deprecation-warnings
     retcode=$((retcode + $?))
   fi
@@ -64,13 +64,13 @@ process_stylesheets() {
     -o -type f -name "*.scss" -print)
   if test -n "$files"; then
     info "Executing prettier for scss..."
-    echo "$files" |
-      parallel -X --bar -j "$PROCS" -I% \
+    echo "$files" \
+      | parallel -X --bar -j "$PROCS" -I% \
         prettier --log-level silent --cache --parser scss --write %
     retcode=$((retcode + $?))
     info "Executing stylelint for scss..."
-    echo "$files" |
-      parallel -X --bar -j "$PROCS" -I% \
+    echo "$files" \
+      | parallel -X --bar -j "$PROCS" -I% \
         stylelint % --color --fix --quiet-deprecation-warnings
     retcode=$((retcode + $?))
   fi
@@ -78,8 +78,8 @@ process_stylesheets() {
     -o -type f \( -name "*.scss" -a ! -name "_*.scss" \) -print)
   if test -n "$files"; then
     info "Executing sass for scss..."
-    echo "$files" |
-      parallel -X --bar -j "$PROCS" -I@ \
+    echo "$files" \
+      | parallel -X --bar -j "$PROCS" -I@ \
         ./runsass @
     retcode=$((retcode + $?))
   fi
@@ -87,8 +87,8 @@ process_stylesheets() {
     -o -type f -name "*.sass" -print)
   if test -n "$files"; then
     info "Executing sass for sass..."
-    echo "$files" |
-      parallel -X --bar -j "$PROCS" -I% \
+    echo "$files" \
+      | parallel -X --bar -j "$PROCS" -I% \
         ./runsass %
     retcode=$((retcode + $?))
   fi
@@ -106,18 +106,18 @@ process_html() {
     retcode=$((retcode + $?))
     sed -i "/^Tidy.*$/d" tidy.out
     info "Executing prettier for html..."
-    echo "$files" |
-      parallel -X --bar -j "$PROCS" -I% \
+    echo "$files" \
+      | parallel -X --bar -j "$PROCS" -I% \
         prettier --log-level silent --cache --parser html --write %
     retcode=$((retcode + $?))
     info "Executing htmlhint..."
-    echo "$files" |
-      parallel -X --bar -j "$PROCS" -I% \
-        htmlhint --config .htmlhintrc -f compact % 2>/dev/null
+    echo "$files" \
+      | parallel -X --bar -j "$PROCS" -I% \
+        htmlhint --config .htmlhintrc -f compact % 2> /dev/null
     retcode=$((retcode + $?))
     info "Executing html-validate..."
-    echo "$files" |
-      parallel -X --bar -j "$PROCS" -I% \
+    echo "$files" \
+      | parallel -X --bar -j "$PROCS" -I% \
         html-validate --formatter stylish %
     retcode=$((retcode + $?))
   fi
@@ -129,8 +129,8 @@ process_js() {
     -o -type f \( -name "*.js" -o -name "*.mjs" -o -name "*.cjs" \) -print)
   if test -n "$files"; then
     info "Executing js-beautify for javascript files..."
-    echo "$files" |
-      parallel -X --bar -j "$PROCS" -I% \
+    echo "$files" \
+      | parallel -X --bar -j "$PROCS" -I% \
         js-beautify --type js --quiet -r %
     return $?
   fi
@@ -142,8 +142,8 @@ process_svg() {
     -o -type f -name "*.svg" -print)
   if test -n "$files"; then
     info "Executing prettier for svg..."
-    echo "$files" |
-      parallel -X --bar -j "$PROCS" -I% \
+    echo "$files" \
+      | parallel -X --bar -j "$PROCS" -I% \
         prettier --log-level silent --cache --parser html --write %
     return $?
   fi
@@ -155,8 +155,8 @@ process_jsx() {
     -o -type f -name "*.jsx" -print)
   if test -n "$files"; then
     info "Executing prettier for jsx..."
-    echo "$files" |
-      parallel -X --bar -j "$PROCS" -I% \
+    echo "$files" \
+      | parallel -X --bar -j "$PROCS" -I% \
         prettier --log-level silent --cache --parser babel --write %
     return $?
   fi
@@ -168,8 +168,8 @@ process_tsx() {
     -o -type f -name "*.tsx" -print)
   if test -n "$files"; then
     info "Executing prettier for tsx files..."
-    echo "$files" |
-      parallel -X --bar -j "$PROCS" -I% \
+    echo "$files" \
+      | parallel -X --bar -j "$PROCS" -I% \
         prettier --log-level silent --cache --parser babel-ts --write %
     return $?
   fi
@@ -181,8 +181,8 @@ process_typescript() {
     -o -type f -name "*.ts" -print)
   if test -n "$files"; then
     info "Executing prettier for ts files..."
-    echo "$files" |
-      parallel -X --bar -j "$PROCS" -I% \
+    echo "$files" \
+      | parallel -X --bar -j "$PROCS" -I% \
         prettier --log-level silent --cache --parser typescript --write %
     return $?
   fi
@@ -195,13 +195,13 @@ process_markdown() {
     -o -type f -name "*.md" -print)
   if test -n "$files"; then
     info "Executing mdformat for md..."
-    echo "$files" |
-      parallel -X --bar -j "$PROCS" -I% \
+    echo "$files" \
+      | parallel -X --bar -j "$PROCS" -I% \
         mdformat -- %
     retcode=$((retcode + $?))
     info "Executing mdl for md..."
-    echo "$files" |
-      parallel -X --bar -j "$PROCS" -I% \
+    echo "$files" \
+      | parallel -X --bar -j "$PROCS" -I% \
         mdl -- %
     retcode=$((retcode + $?))
   fi
@@ -213,13 +213,13 @@ process_shellscripts() {
   files="$(shfmt -f . | grep -v "node_modules")"
   if test -n "$files"; then
     info "Executing shfmt for shell scripts..."
-    echo "$files" |
-      parallel -X --bar -j "$PROCS" -I% \
+    echo "$files" \
+      | parallel -X --bar -j "$PROCS" -I% \
         shfmt -i 2 -bn -ci -sr -w -- %
     retcode=$((retcode + $?))
     info "Executing shellcheck for shell scripts..."
-    echo "$files" |
-      parallel -X --bar -j "$PROCS" -I% \
+    echo "$files" \
+      | parallel -X --bar -j "$PROCS" -I% \
         shellcheck --check-sourced --color --shell=bash -- %
     retcode=$((retcode + $?))
   fi

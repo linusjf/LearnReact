@@ -1,8 +1,5 @@
 import React, { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { Form } from "react-bootstrap";
-import { Button } from "react-bootstrap";
-import { Card } from "react-bootstrap";
 
 class App extends React.Component {
   constructor(props) {

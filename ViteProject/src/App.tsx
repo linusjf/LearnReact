@@ -4,9 +4,9 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 
 /**
- *
+ * @returns {JSX.Element}  returns the JSX code to be inserted in html doc
  */
-function App() {
+function App() : JSX.Element {
   const [count, setCount] = useState(0);
 
   return (

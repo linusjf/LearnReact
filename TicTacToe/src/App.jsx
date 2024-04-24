@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 /**
- *
+ * @returns {JSX.
  * @param root0
  * @param root0.value
  * @param root0.onSquareClick

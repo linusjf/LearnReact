@@ -31,7 +31,7 @@ class DrumMachine extends React.Component {
     console.log("keydown listener added");
     this.setAudioVolume();
     this.setState((state) => ({
-      drumpad: drumsetnames[this.state.drumset]
+      drumpad: drumsetnames[state.drumset]
     }));
   }
 
@@ -69,9 +69,9 @@ class DrumMachine extends React.Component {
     }));
   };
 
-  handleVolumeChange = (evt) => {
+  handleVolumeChange = (event) => {
     const source = event.target || event.srcElement;
-    this.setState((state) => ({
+    this.setState(() => ({
       volume: source.value
     }));
   };
@@ -84,7 +84,7 @@ class DrumMachine extends React.Component {
     });
   };
 
-  handleDrumPad = (evt) => {
+  handleDrumPad = (event) => {
     const source = event.target || event.srcElement;
     this.play(source.firstElementChild.getAttribute("id"));
   };
@@ -92,7 +92,7 @@ class DrumMachine extends React.Component {
   play = (id) => {
     const audio = document.getElementById(id);
     if (this.state.power) {
-      this.setState((state) => ({
+      this.setState(() => ({
         drumpad: audio.title
       }));
       audio.play();

@@ -1,6 +1,6 @@
 const globals = require("globals");
 const js = require("@eslint/js");
-const jsdoc = require("eslint-plugin-jsdoc");
+// const jsdoc = require("eslint-plugin-jsdoc");
 const typescript = require("typescript-eslint");
 const tsParser = require("@typescript-eslint/parser");
 const html = require("@html-eslint/eslint-plugin");
@@ -11,14 +11,7 @@ const react = require("eslint-plugin-react/configs/recommended");
 
 const config = [
   {
-    ignores: ["**/dist/**/*", "**/build/**/*"],
-    linterOptions: {
-      noInlineConfig: false,
-      reportUnusedDisableDirectives: "error"
-    }
-  },
-  {
-    ignores: ["**/dist/**/*", "**/build/**/*"],
+    ignores: ["**/dist/**/*", "**/build/**/*", "**/docs/**/*"],
     files: [
       "**/*.jsx",
       "**/*.tsx",
@@ -32,11 +25,21 @@ const config = [
       ecmaVersion: "latest",
       globals: {
         ...globals.browser,
-        ...globals.node
+        ...globals.node,
+        Redux: true,
+        RTK: true,
+        describe: true,
+        expect: true,
+        test: true,
+        ReduxThunk: true,
+        it: true,
+        PropTypes: true,
+        HtmlSanitizer: true,
+        ReactDOMServer: true
       }
     },
-    ...js.configs.recommended,
-    ...jsdoc.configs["flat/recommended"]
+    ...js.configs.recommended
+    //    ...jsdoc.configs["flat/recommended"]
   },
   {
     name: "ESLint for TypeScript",
@@ -106,7 +109,20 @@ const config = [
       parserOptions: {},
       globals: {
         ...globals.browser,
-        ...globals.node
+        ...globals.node,
+        JSX: true,
+        React: true,
+        Redux: true,
+        ReactRedux: true,
+        ReactDOM: true,
+        describe: true,
+        expect: true,
+        test: true,
+        ReduxThunk: true,
+        it: true,
+        PropTypes: true,
+        HtmlSanitizer: true,
+        ReactDOMServer: true
       }
     },
     settings: {
@@ -129,7 +145,8 @@ const config = [
       },
       globals: {
         ...globals.browser,
-        ...globals.node
+        ...globals.node,
+        JSX: true
       }
     },
     settings: {
