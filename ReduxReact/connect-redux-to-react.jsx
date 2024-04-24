@@ -34,3 +34,5 @@ const ConnectedComponent = connect(
   mapStateToProps,
   mapDispatchToProps
 )(Presentational);
+
+export default ConnectedComponent;

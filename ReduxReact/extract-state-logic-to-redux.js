@@ -19,3 +19,5 @@ const messageReducer = (state = [], action) => {
 };
 
 const store = Redux.createStore(messageReducer);
+
+export { store, addMessage };
