@@ -5,3 +5,5 @@ const action = {
 const actionCreator = () => {
   return action;
 };
+
+export { actionCreator };

@@ -21,3 +21,5 @@ const loginAction = () => {
     type: "LOGIN"
   };
 };
+
+export { store, loginAction };

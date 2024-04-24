@@ -14,10 +14,10 @@ const receivedData = (data) => {
 };
 
 const handleAsync = () => {
-  return function(dispatch) {
+  return function (dispatch) {
     // Dispatch request action here
     dispatch(requestingData());
-    setTimeout(function() {
+    setTimeout(function () {
       let data = {
         users: ["Jeff", "William", "Alice"]
       };
@@ -37,12 +37,12 @@ const asyncDataReducer = (state = defaultState, action) => {
     case REQUESTING_DATA:
       return {
         fetching: true,
-          users: []
+        users: []
       };
     case RECEIVED_DATA:
       return {
         fetching: false,
-          users: action.users
+        users: action.users
       };
     default:
       return state;
@@ -53,3 +53,5 @@ const store = Redux.createStore(
   asyncDataReducer,
   Redux.applyMiddleware(ReduxThunk.default)
 );
+
+export { store, handleAsync };

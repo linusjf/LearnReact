@@ -2,3 +2,4 @@
 const action = {
   type: "LOGIN"
 };
+export { action };

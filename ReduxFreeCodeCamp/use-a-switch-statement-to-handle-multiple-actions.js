@@ -32,3 +32,5 @@ const logoutUser = () => {
     type: "LOGOUT"
   };
 };
+
+export { store, logoutUser, loginUser };
