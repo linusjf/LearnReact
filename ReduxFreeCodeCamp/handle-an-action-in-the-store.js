@@ -22,4 +22,7 @@ const loginAction = () => {
   };
 };
 
-export { store, loginAction };
+export {
+  store,
+  loginAction
+};

@@ -6,18 +6,14 @@
  * @param root0.onFilterTextChange
  * @param root0.onInStockOnlyChange
  */
-function SearchBar({
-  filterText,
-  onFilterTextChange,
-  onInStockOnlyChange
-}) {
+function SearchBar({ filterText, onFilterTextChange, onInStockOnlyChange }) {
   return (
     <form>
       <input
         type="text"
         value={filterText}
         placeholder="Search..."
-          onChange={(e) => onFilterTextChange(e.target.value)}
+        onChange={(e) => onFilterTextChange(e.target.value)}
       />
       <label>
         <input

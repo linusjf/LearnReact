@@ -8,9 +8,24 @@ const htmlparser = require("@html-eslint/parser");
 const yaml = require("eslint-plugin-yml");
 const jsonc = require("eslint-plugin-jsonc");
 const react = require("eslint-plugin-react/configs/recommended");
+const myglobals = {
+  Redux: true,
+  RTK: true,
+  describe: true,
+  expect: true,
+  test: true,
+  ReduxThunk: true,
+  it: true,
+  PropTypes: true,
+  HtmlSanitizer: true,
+  ReactDOMServer: true,
+  ReactRedux: true,
+  JSX: true,
+  React: true,
+  ReactDOM: true
+};
 
-const config = [
-  {
+const config = [{
     ignores: ["**/dist/**/*", "**/build/**/*", "**/docs/**/*"],
     files: [
       "**/*.jsx",
@@ -26,16 +41,7 @@ const config = [
       globals: {
         ...globals.browser,
         ...globals.node,
-        Redux: true,
-        RTK: true,
-        describe: true,
-        expect: true,
-        test: true,
-        ReduxThunk: true,
-        it: true,
-        PropTypes: true,
-        HtmlSanitizer: true,
-        ReactDOMServer: true
+        ...myglobals
       }
     },
     ...js.configs.recommended
@@ -110,19 +116,7 @@ const config = [
       globals: {
         ...globals.browser,
         ...globals.node,
-        JSX: true,
-        React: true,
-        Redux: true,
-        ReactRedux: true,
-        ReactDOM: true,
-        describe: true,
-        expect: true,
-        test: true,
-        ReduxThunk: true,
-        it: true,
-        PropTypes: true,
-        HtmlSanitizer: true,
-        ReactDOMServer: true
+        ...myglobals
       }
     },
     settings: {

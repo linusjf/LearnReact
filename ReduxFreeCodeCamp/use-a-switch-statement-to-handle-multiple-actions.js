@@ -33,4 +33,8 @@ const logoutUser = () => {
   };
 };
 
-export { store, logoutUser, loginUser };
+export {
+  store,
+  logoutUser,
+  loginUser
+};

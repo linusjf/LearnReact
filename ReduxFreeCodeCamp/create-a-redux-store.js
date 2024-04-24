@@ -7,4 +7,6 @@ const reducer = (state = 5) => {
 // Define the store here:
 const store = Redux.createStore(reducer);
 
-export { store };
+export {
+  store
+};

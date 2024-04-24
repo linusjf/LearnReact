@@ -26,4 +26,7 @@ const wakeUp = () => {
 
 const store = Redux.createStore(immutableReducer);
 
-export { store, wakeUp };
+export {
+  store,
+  wakeUp
+};

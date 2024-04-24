@@ -12,7 +12,9 @@ const clickActionsSlice = RTK.createSlice({
   }
 });
 
-const { clickAction } = clickActionsSlice.actions;
+const {
+  clickAction
+} = clickActionsSlice.actions;
 
 // Redux Store
 

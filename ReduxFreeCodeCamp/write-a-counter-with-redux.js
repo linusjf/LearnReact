@@ -28,4 +28,8 @@ const decAction = () => {
 
 const store = Redux.createStore(counterReducer);
 
-export { store, decAction, incAction };
+export {
+  store,
+  decAction,
+  incAction
+};

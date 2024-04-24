@@ -7,4 +7,7 @@ const mapStateToProps = (state) => {
   };
 };
 
-export { state, mapStateToProps };
+export {
+  state,
+  mapStateToProps
+};

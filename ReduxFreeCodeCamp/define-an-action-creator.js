@@ -6,4 +6,6 @@ const actionCreator = () => {
   return action;
 };
 
-export { actionCreator };
+export {
+  actionCreator
+};

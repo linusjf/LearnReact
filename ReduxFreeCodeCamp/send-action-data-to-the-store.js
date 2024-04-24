@@ -6,7 +6,7 @@ const notesReducer = (state = "Initial State", action) => {
     case ADD_NOTE:
       return action.text;
 
-    // Change code above this line
+      // Change code above this line
     default:
       return state;
   }

@@ -31,4 +31,7 @@ const addToDo = (todo) => {
 
 const store = Redux.createStore(immutableReducer);
 
-export { addToDo, store };
+export {
+  addToDo,
+  store
+};

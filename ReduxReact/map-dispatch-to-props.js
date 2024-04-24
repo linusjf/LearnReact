@@ -8,10 +8,13 @@ const addMessage = (message) => {
 // Change code below this line
 const mapDispatchToProps = (dispatch) => {
   return {
-    submitNewMessage: function (msg) {
+    submitNewMessage: function(msg) {
       dispatch(addMessage(msg));
     }
   };
 };
 
-export { addMessage, mapDispatchToProps };
+export {
+  addMessage,
+  mapDispatchToProps
+};
