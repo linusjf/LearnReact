@@ -1,0 +1,17 @@
+{
+  "author": "Linus Fernandes",
+  "dependencies": {
+    "react": "^18.2.0"
+  },
+  "description": "25+5 clock",
+  "keywords": [
+    "clock"
+  ],
+  "license": "MIT",
+  "main": "index.jsx",
+  "name": "25plus5clock",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0"
+}
