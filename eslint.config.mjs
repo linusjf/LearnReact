@@ -1,13 +1,13 @@
-const globals = require("globals");
-const js = require("@eslint/js");
-// const jsdoc = require("eslint-plugin-jsdoc");
-const typescript = require("typescript-eslint");
-const tsParser = require("@typescript-eslint/parser");
-const html = require("@html-eslint/eslint-plugin");
-const htmlparser = require("@html-eslint/parser");
-const yaml = require("eslint-plugin-yml");
-const jsonc = require("eslint-plugin-jsonc");
-const react = require("eslint-plugin-react/configs/recommended");
+import globals from "globals";
+import js from "@eslint/js";
+// import jsdoc from "eslint-plugin-jsdoc";
+import typescript from "typescript-eslint";
+import tsParser from "@typescript-eslint/parser";
+import html from "@html-eslint/eslint-plugin";
+import htmlparser from "@html-eslint/parser";
+import yaml from "eslint-plugin-yml";
+import jsonc from "eslint-plugin-jsonc";
+import react from "eslint-plugin-react/configs/recommended.js";
 const myglobals = {
   Redux: true,
   RTK: true,
@@ -153,4 +153,4 @@ const config = [{
   ...jsonc.configs["flat/recommended-with-json"]
 ];
 
-module.exports = config;
+export default config;
