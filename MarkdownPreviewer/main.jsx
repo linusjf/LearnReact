@@ -1,7 +1,6 @@
 import React, { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import Markdown from "react-markdown";
-import { Card } from "react-bootstrap";
 import { Form } from "react-bootstrap";
 import testString from "markdown";
 import remarkGfm from "remark-gfm";
@@ -66,9 +65,8 @@ class MarkdownEditor extends React.Component {
     const title = "Editor";
     const cardClass = this.state.max ? "editor-max" : "editor";
     return (
-      <Card className={cardClass}>
-        <Card.Header
-          as="div"
+      <div className={cardClass}>
+        <div
           className="header d-flex flex-row bg-primary align-items-center"
           onClick={this.handleBtnToggle}
         >
@@ -79,7 +77,7 @@ class MarkdownEditor extends React.Component {
               width="16"
               height="16"
               fill="currentColor"
-              class="bi bi-arrows-angle-contract"
+              class="bi bi-arrows-angle-contract mr-0 pr-0"
               viewBox="0 0 16 16"
             >
               <path
@@ -88,12 +86,12 @@ class MarkdownEditor extends React.Component {
               />
             </svg>
           ) : (
-            <svg
+             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
               fill="currentColor"
-              class="bi bi-arrows-fullscreen"
+              class="bi bi-arrows-fullscreen mr-0 pr-0"
               viewBox="0 0 16 16"
             >
               <path
@@ -102,14 +100,14 @@ class MarkdownEditor extends React.Component {
               />
             </svg>
           )}
-        </Card.Header>
+        </div>
         <Form.Control
           as="textarea"
           id="editor"
           value={this.props.input}
           onChange={this.props.onchange}
         ></Form.Control>
-      </Card>
+      </div>
     );
   }
 }
@@ -131,9 +129,8 @@ class HTMLPreview extends React.Component {
   render() {
     const cardClass = this.state.max ? "preview-max" : "preview";
     return (
-      <Card className={cardClass}>
-        <Card.Header
-          as="div"
+      <div className={cardClass}>
+        <div
           className="header d-flex flex-row bg-primary align-items-center"
           onClick={this.handleBtnToggle}
         >
@@ -144,7 +141,7 @@ class HTMLPreview extends React.Component {
               width="16"
               height="16"
               fill="currentColor"
-              class="bi bi-arrows-angle-contract"
+              class="bi bi-arrows-angle-contract mr-0 pr-0"
               viewBox="0 0 16 16"
             >
               <path
@@ -158,7 +155,7 @@ class HTMLPreview extends React.Component {
               width="16"
               height="16"
               fill="currentColor"
-              class="bi bi-arrows-fullscreen"
+              class="bi bi-arrows-fullscreen mr-0 pr-0"
               viewBox="0 0 16 16"
             >
               <path
@@ -167,7 +164,7 @@ class HTMLPreview extends React.Component {
               />
             </svg>
           )}
-        </Card.Header>
+        </div>
         <div id="preview" className="htmlpreview">
           <Markdown
             remarkPlugins={[remarkGfm, remarkBreaks]}
@@ -176,7 +173,7 @@ class HTMLPreview extends React.Component {
             {this.props.input}
           </Markdown>
         </div>
-      </Card>
+      </div>
     );
   }
 }
