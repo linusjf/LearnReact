@@ -67,17 +67,17 @@ class MarkdownEditor extends React.Component {
     return (
       <div className={cardClass}>
         <div
-          className="header d-flex flex-row bg-primary align-items-center"
+          className="header d-flex flex-row bg-primary align-items-center rounded-top"
           onClick={this.handleBtnToggle}
         >
-          <p className="flex-fill text-left mt-2 mb-2">{title}</p>
+          <p className="flex-fill text-left ms-3 mt-2 mb-2">{title}</p>
           {this.state.max ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
               fill="currentColor"
-              class="bi bi-arrows-angle-contract mr-0 pr-0"
+              class="bi bi-arrows-angle-contract mr-1 pr-1 border-light"
               viewBox="0 0 16 16"
             >
               <path
@@ -91,7 +91,7 @@ class MarkdownEditor extends React.Component {
               width="16"
               height="16"
               fill="currentColor"
-              class="bi bi-arrows-fullscreen mr-0 pr-0"
+              class="bi bi-arrows-fullscreen mr-1 pr-1 border-light"
               viewBox="0 0 16 16"
             >
               <path
@@ -131,17 +131,17 @@ class HTMLPreview extends React.Component {
     return (
       <div className={cardClass}>
         <div
-          className="header d-flex flex-row bg-primary align-items-center"
+          className="header d-flex flex-row bg-primary align-items-center rounded-top"
           onClick={this.handleBtnToggle}
         >
-          <p className="flex-fill text-left mt-2 mb-2">Preview</p>
+          <p className="flex-fill text-left ms-3 mt-2 mb-2">Preview</p>
           {this.state.max ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
               fill="currentColor"
-              class="bi bi-arrows-angle-contract mr-0 pr-0"
+              class="bi bi-arrows-angle-contract mr-1 pr-1 my-0 border-light"
               viewBox="0 0 16 16"
             >
               <path
@@ -155,7 +155,7 @@ class HTMLPreview extends React.Component {
               width="16"
               height="16"
               fill="currentColor"
-              class="bi bi-arrows-fullscreen mr-0 pr-0"
+              class="bi bi-arrows-fullscreen mr-1 pr-1 border-light"
               viewBox="0 0 16 16"
             >
               <path

@@ -38,6 +38,9 @@ textarea {
 .header {
   height: 2em;
   font-size: 0.625rem;
+  opacity: 1;
+  margin: 0;
+  padding: 0;
 }
 
 .preview {
@@ -71,4 +74,16 @@ textarea {
 
 img {
   max-width: 100%;
+}
+
+svg {
+  outline: 2px solid red;
+  /*  background-color: red;*/
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(255, 0, 0, 0),
+    rgba(255, 0, 0, 1)
+  );
 }
