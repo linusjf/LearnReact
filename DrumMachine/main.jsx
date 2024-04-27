@@ -160,7 +160,7 @@ class DrumMachine extends React.Component {
             <Form.Label htmlFor="volume" className="mx-auto">
               {"Volume: " + Math.ceil(this.state.volume * 100)}
             </Form.Label>
-              <OverlayTrigger placement="left" overlay={
+              <OverlayTrigger placement="top" overlay={
           <Tooltip id={"tooltip-volume"}>
               <strong>Volume</strong>
               </Tooltip>} delay={{ show: 100, hide: 200 }}
@@ -178,7 +178,9 @@ class DrumMachine extends React.Component {
           </div>
               <OverlayTrigger placement="bottom" overlay={
           <Tooltip id={"tooltip-power"}>
-              <strong>Power</strong>
+            {this.state.power ?
+            <strong>Power On</strong>:
+            <strong>Power Off</strong>}
               </Tooltip>} delay={{ show: 100, hide: 200 }}
                 trigger={["hover"]}
               >
@@ -191,7 +193,7 @@ class DrumMachine extends React.Component {
               width="10"
               height="10"
               fill="currentColor"
-              className="bi bi-power"
+              className="bi bi-power border-light"
               viewBox="0 0 16 16"
             >
               <path d="M7.5 1v7h1V1z" />
