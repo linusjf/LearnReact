@@ -3,6 +3,8 @@ import { createRoot } from "react-dom/client";
 import { Form } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { Card } from "react-bootstrap";
+import {Tooltip } from "react-bootstrap";
+import {OverlayTrigger } from "react-bootstrap";
 import drumsets, { drumsetnames, isValidKey } from "drummachine";
 
 class App extends React.Component {
@@ -109,6 +111,12 @@ class DrumMachine extends React.Component {
       <Card id="drum-machine" className="drum-machine">
         <div className="drum-pads-container">
           {Object.entries(currDrumSet).map(([key, value]) => (
+              <OverlayTrigger placement="top" overlay={
+          <Tooltip id={"tooltip-" + key}>
+              <strong>{key}</strong>
+              </Tooltip>} delay={{ show: 100, hide: 200 }}
+                trigger={["hover"]}
+              >
             <div
               key={key}
               className={drumpadClass}
@@ -127,6 +135,7 @@ class DrumMachine extends React.Component {
               ></audio>
               {value.id}
             </div>
+                </OverlayTrigger>
           ))}
         </div>
         <Card className="controls-container">
