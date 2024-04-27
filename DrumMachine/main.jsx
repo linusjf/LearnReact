@@ -160,6 +160,12 @@ class DrumMachine extends React.Component {
             <Form.Label htmlFor="volume" className="mx-auto">
               {"Volume: " + Math.ceil(this.state.volume * 100)}
             </Form.Label>
+              <OverlayTrigger placement="left" overlay={
+          <Tooltip id={"tooltip-volume"}>
+              <strong>Volume</strong>
+              </Tooltip>} delay={{ show: 100, hide: 200 }}
+                trigger={["hover"]}
+              >
             <Form.Range
               className="form-range mx-auto"
               min="0"
@@ -168,7 +174,14 @@ class DrumMachine extends React.Component {
               id="volume"
               onChange={this.handleVolumeChange}
             />
+                </OverlayTrigger>
           </div>
+              <OverlayTrigger placement="bottom" overlay={
+          <Tooltip id={"tooltip-power"}>
+              <strong>Power</strong>
+              </Tooltip>} delay={{ show: 100, hide: 200 }}
+                trigger={["hover"]}
+              >
           <Button
             onClick={this.handlePowerButton}
             className={btnClass + " mx-auto"}
@@ -185,6 +198,7 @@ class DrumMachine extends React.Component {
               <path d="M3 8.812a5 5 0 0 1 2.578-4.375l-.485-.874A6 6 0 1 0 11 3.616l-.501.865A5 5 0 1 1 3 8.812" />
             </svg>
           </Button>
+                </OverlayTrigger>
         </Card>
       </Card>
     );
