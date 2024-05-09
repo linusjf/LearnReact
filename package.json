@@ -3,7 +3,7 @@
     "@babel/eslint-parser": "^7.24.1",
     "@html-eslint/eslint-plugin": "^0.24.1",
     "@html-eslint/parser": "^0.24.1",
-    "eslint": "^8.57.0",
+    "eslint": "^9.0.0",
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-jsdoc": "^48.2.3",
     "eslint-plugin-jsonc": "^2.15.1",
